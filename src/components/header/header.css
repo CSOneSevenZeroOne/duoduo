@@ -1,0 +1,95 @@
+#header {
+  height: 136px;
+  border-bottom: 3px solid #ff6600;
+  padding-top: 21px;
+}
+#header #main {
+  width: 1200px;
+  margin: 0 auto;
+}
+#header #main .top {
+  overflow: hidden;
+  height: 94px;
+}
+#header #main .top .left {
+  float: left;
+}
+#header #main .top .left span {
+  font-size: 21px;
+  color: #666;
+  position: relative;
+  top: -20px;
+  left: 15px;
+}
+#header #main .top .center {
+  float: left;
+  margin-left: 117px;
+}
+#header #main .top .center form {
+  width: 486px;
+  height: 34px;
+  border: 1px solid #d1cdcd;
+  overflow: hidden;
+}
+#header #main .top .center form input {
+  width: 438px;
+  height: 33px;
+  border: 0;
+  float: left;
+  padding-left: 10px;
+  box-sizing: border-box;
+  color: #d1cdcd;
+}
+#header #main .top .center form button {
+  width: 48px;
+  height: 34px;
+  background: url("../../images/search_btn.png") no-repeat center #fff;
+  border: 0;
+  float: right;
+  cursor: pointer;
+}
+#header #main .top .center .tag {
+  margin-top: 8px;
+}
+#header #main .top .center .tag a {
+  color: #888;
+  margin-right: 22px;
+}
+#header #main .top .right {
+  float: right;
+  margin-top: 10px;
+}
+#header #main .top .right a {
+  font-size: 14px;
+  color: #4c4c4c;
+  border-right: 2px solid #4c4c4c;
+  padding: 0 11px;
+}
+#header #main .top .right a:nth-last-of-type(1) {
+  border-right: 0;
+}
+#header #main .bottom {
+  overflow: hidden;
+}
+#header #main .bottom .b-fenlei {
+  width: 164px;
+  height: 40px;
+  border: 1px solid #ff6600;
+  background: url("../../images/fenlei.png") no-repeat #f9f7f5 21px 13px;
+  background-size: 17px;
+  padding-left: 50px;
+  font-size: 18px;
+  line-height: 40px;
+  color: #4c4c4c;
+  float: left;
+}
+#header #main .bottom .nav {
+  float: left;
+  margin-left: 27px;
+}
+#header #main .bottom .nav a {
+  padding: 0 33px;
+  font-size: 17px;
+  color: #4c4c4c;
+  line-height: 40px;
+}

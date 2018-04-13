@@ -1,5 +1,12 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+html,body,div,p,a,h1,h2,h3,h4,h5,h6,ol,ul,li,dl,dt,dd,table,th,tr,td,form,input,span,i,em,b,strong{ padding:0;margin:0;}
+
+a{ text-decoration:none;}
+.clearfix:after{ content: ""; clear: both; display:block; font-size: 1px; height: 0; overflow: hidden; visibility: hidden;}
+
+input{ outline: none;}
+img{ border: 0;}
+th,h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+
+ul li,ol li{ list-style:none;}
+
+body{ font:12px "微软雅黑";}

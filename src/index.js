@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
-
+import Home from './components/home/home'
 
 import { HashRouter, Route, Link } from "react-router-dom";
 
@@ -27,11 +27,7 @@ ReactDOM.render(
 	<HashRouter>
 		<Provider store={store}>
 			<div>
-				<Link to="/brother">brother</Link>
-				<Link to="/child">child</Link>
-				<Route exact path="/" component={ } />
-				<Route path="/brother" component={} />
-				<Route path="/child" component={} />
+                <Route exact path="/" component={Home} />
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));
