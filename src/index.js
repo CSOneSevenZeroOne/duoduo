@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Test from './components/test/test.jsx';
-import Lifecycle from './components/lifecycle/lifecycle.jsx';
+
 import registerServiceWorker from './registerServiceWorker';
-import Child from './components/child/child.jsx';
-import Brother from './components/brother/brother.jsx';
+
 
 import { HashRouter, Route, Link } from "react-router-dom";
 
@@ -29,13 +27,11 @@ ReactDOM.render(
 	<HashRouter>
 		<Provider store={store}>
 			<div>
-				{/*<Test name="abc" />
-				<Lifecycle />*/}
 				<Link to="/brother">brother</Link>
 				<Link to="/child">child</Link>
-				<Route exact path="/" component={Brother} />
-				<Route path="/brother" component={Brother} />
-				<Route path="/child" component={Child} />
+				<Route exact path="/" component={ } />
+				<Route path="/brother" component={} />
+				<Route path="/child" component={} />
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));
