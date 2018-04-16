@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
+import Header from './components/header/header'
 import Home from './components/home/home'
+import Sort from './components/sort/sort'
 
 import { HashRouter, Route, Link } from "react-router-dom";
 
@@ -27,7 +29,9 @@ ReactDOM.render(
 	<HashRouter>
 		<Provider store={store}>
 			<div>
+                <Header/>
                 <Route exact path="/" component={Home} />
+                <Route exact path='/sort' component={Sort}/>
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));

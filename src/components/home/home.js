@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import React, {
     Component
 } from 'react';
-import Header from '../header/header'
+
 import { Route,Link } from "react-router-dom";
 // 库 框架
 class Brother extends Component {
@@ -17,7 +17,7 @@ class Brother extends Component {
     render() {
         return(
            <div id="all">
-                <Header/>
+
            </div>
         )
     }

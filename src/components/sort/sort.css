@@ -1,0 +1,12 @@
+.sort {
+  overflow: hidden;
+  padding-top: 30px;
+}
+.sort .left {
+  float: left;
+  width: 216px;
+}
+.sort .right {
+  float: right;
+  width: 956px;
+}
