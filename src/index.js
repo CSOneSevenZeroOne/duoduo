@@ -7,6 +7,7 @@ import Home from './components/home/home'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
 import Register from './components/register/register'
+
 import { HashRouter, Route, Link } from "react-router-dom";
 
 import { createStore } from 'redux'

@@ -4,8 +4,8 @@ import React, {
     Component
 } from 'react';
 
-// import {Route, Link} from "react-router-dom";
-
+import {Route, Link} from "react-router-dom";
+import Login from '../login/login'
 // 库 框架
 class Brother extends Component {
     constructor(props) {
@@ -26,7 +26,9 @@ class Brother extends Component {
 
     render() {
         return (
+
             <div id="header">
+                <Login/>
                 <div id="main">
                     <div className="top">
                         <div className="left">
@@ -48,7 +50,7 @@ class Brother extends Component {
                         </div>
                         <div className="right">
                             <a href="javascript:void(0)">登录</a>
-                            <a href="javascript:void(0)">注册</a>
+                            <Link to="/register">注册</Link>
                         </div>
                     </div>
 

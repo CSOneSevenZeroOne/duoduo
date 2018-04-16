@@ -34,9 +34,11 @@
   margin-top: 16px;
 }
 #register .reg form p {
-  width: 428px;
+  width: 388px;
   font-size: 13px;
   color: #888;
+  text-align: left;
+  padding-left: 40px;
 }
 #register .reg form p input {
   width: 260px;
@@ -45,6 +47,8 @@
   border-radius: 2px;
   padding: 0 9px;
   box-sizing: border-box;
+  font-size: 12px;
+  color: #888;
 }
 #register .reg form .p1 {
   width: 272px;
@@ -70,7 +74,7 @@
   height: 28px;
   background: #ff6600;
   border: 0;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #fff;
   text-align: center;
   line-height: 28px;

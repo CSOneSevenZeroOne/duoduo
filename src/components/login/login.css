@@ -1,0 +1,86 @@
+#login {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+}
+#login .log {
+  width: 488px;
+  height: 380px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999;
+  padding: 50px 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#login .log h3 {
+  font-size: 17px;
+  color: #4c4c4c;
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+#login .log form p {
+  margin-bottom: 10px;
+  color: #888;
+}
+#login .log form p input {
+  width: 270px;
+  height: 30px;
+  padding-left: 8px;
+  line-height: 30px;
+  color: #d1cdcd;
+  border: 1px solid #d1cdcd;
+  font-size: 12px;
+}
+#login .log form p span {
+  color: #62abf4;
+  cursor: pointer;
+}
+#login .log form .p1 {
+  width: 272px;
+  height: 14px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+}
+#login .log form .p1 .icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-position: -173px -277px;
+  margin-right: 6px;
+  position: relative;
+  top: 2px;
+}
+#login .log form .p1 span {
+  color: #62abf4;
+}
+#login .log form button {
+  width: 260px;
+  height: 28px;
+  background: #ff6600;
+  border: 0;
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+}
+#login .log .ii {
+  position: absolute;
+  top: 12px;
+  right: 4px;
+  width: 17px;
+  height: 17px;
+  background-position: -187px -254px;
+  margin-right: 6px;
+}

@@ -30,7 +30,7 @@ class Fenye extends Component {
                         </div>
                         <div className="fenlei-l-b">
                             <a href="javascript:void(0)">同人小说</a>
-                            <span>全部分类 ></span>
+                            <Link to="/sort" className="aa">全部分类 ></Link>
                         </div>
                     </div>
 
