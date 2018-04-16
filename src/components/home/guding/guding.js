@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 
-import { Route,Link } from "react-router-dom";
+// import { Route,Link } from "react-router-dom";
 // 库 框架
 class Home extends Component {
     constructor(props) {

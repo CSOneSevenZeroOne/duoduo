@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from 'jquery'
-import {Route, Link} from "react-router-dom";
+// import {Route, Link} from "react-router-dom";
 
 // 库 框架
 class Tuijian extends Component {
@@ -20,20 +20,21 @@ class Tuijian extends Component {
 
     slideup(i){
 
-        $(".yincang").eq(i).stop().animate({
+        $("#tuijian .yincang").eq(i).stop().animate({
             top:0
         },300)
     }
 
     slidedown(i){
-        $(".yincang").eq(i).stop().animate({
+
+        $("#tuijian .yincang").eq(i).stop().animate({
             top:172
         },300)
     }
 
     render() {
         return (
-            <div className="tuijian">
+            <div className="tuijian" id="tuijian">
                 <div className="main" style={{overflow: "hidden"}}>
                     <div className="tuijian-l">
                         <div className="tj-l-t">
@@ -44,7 +45,7 @@ class Tuijian extends Component {
                                 {((arr) => {
                                     return arr.map((e, i) => {
                                         return <li key={i}>
-                                            <div id="box" onMouseEnter={this.slideup.bind(this,i)} onMouseLeave={this.slidedown.bind(this,i)}>
+                                            <div className="box" onMouseEnter={this.slideup.bind(this,i)} onMouseLeave={this.slidedown.bind(this,i)}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="yincang">
                                                     <p>

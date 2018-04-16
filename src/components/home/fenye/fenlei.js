@@ -24,7 +24,7 @@ class Fenye extends Component {
                         <div className="fenlei-l-t">
                             {((arr) => {
                                 return arr.map((e, i) => {
-                                    return <a href="javascript:void(0)" key={i}>{e}</a>
+                                    return <Link to="/sort" key={i}>{e}</Link>
                                 })
                             })(this.state.arr)}
                         </div>

@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from 'jquery'
-import {Route, Link} from "react-router-dom";
+// import {Route, Link} from "react-router-dom";
 
 // 库 框架
 class Tuijian extends Component {
@@ -17,7 +17,18 @@ class Tuijian extends Component {
             arr: []
         }
     }
+    slideup(i){
 
+        $("#wanben .yincang").eq(i).stop().animate({
+            top:0
+        },300)
+    }
+
+    slidedown(i){
+        $("#wanben .yincang").eq(i).stop().animate({
+            top:172
+        },300)
+    }
     render() {
         return (
             <div className="tuijian" id="wanben">
@@ -31,16 +42,18 @@ class Tuijian extends Component {
                                 {((arr) => {
                                     return arr.map((e, i) => {
                                         return <li key={i}>
-                                            <img src={e.img} alt=""/>
-                                            <h4>{e.title}</h4>
-                                            <div className="yincang">
-                                                <p>
-                                                    {e.msg}
-                                                </p>
-                                                <span>
+                                            <div className="box" onMouseEnter={this.slideup.bind(this,i)} onMouseLeave={this.slidedown.bind(this,i)}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="yincang">
+                                                    <p>
+                                                        {e.msg}
+                                                    </p>
+                                                    <span>
                                                     立即阅读
                                                  </span>
+                                                </div>
                                             </div>
+                                            <h4>{e.title}</h4>
                                         </li>
                                     })
                                 })(this.state.arr)}

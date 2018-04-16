@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from 'jquery'
-import {Route, Link} from "react-router-dom";
+// import {Route, Link} from "react-router-dom";
 
 // 库 框架
 class Tuijian extends Component {
@@ -18,7 +18,6 @@ class Tuijian extends Component {
             src1:require('../../../images/icon.png'),
         }
     }
-
     render() {
         return (
             <div className="man" id="woman">
@@ -47,7 +46,7 @@ class Tuijian extends Component {
                                     {((arr)=>{
                                         return arr.map((e,i)=>{
                                             return <li key={i}>
-                                                <a href="#" className="leibie">[{e.class}]</a>
+                                                <a href="#" className="leibie">[{e.class.split("：")[1]}]</a>
                                                 <a href="#" className="title">{e.title}</a>
                                             </li>
                                         })
@@ -76,11 +75,9 @@ class Tuijian extends Component {
                 sort: self.state.name
             }
         }).then(function (res) {
-
             self.setState({
                 arr:res
             })
-            console.log(self.state.arr);
         })
     }
 }

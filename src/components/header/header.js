@@ -1,24 +1,31 @@
 import "./header.css"
-import { connect } from "react-redux"
+import {connect} from "react-redux"
 import React, {
     Component
 } from 'react';
 
-import { Route,Link } from "react-router-dom";
+// import {Route, Link} from "react-router-dom";
+
 // 库 框架
 class Brother extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            src:require("../../images/logo_03.png"),
-            name:"汪美杰的专属小书屋",
-            name1:"斗罗大陆",
-            arr:["首页","男生","女生","包月","完本","免费","排行榜"]
+            src: require("../../images/logo_03.png"),
+            name: "汪美杰的专属小书屋",
+            name1: "斗罗大陆",
+            arr: ["首页", "男生", "女生", "包月", "完本", "免费", "排行榜"]
         }
     }
 
+    change(e) {
+        this.setState({
+            name1:e.target.value
+        })
+    }
+
     render() {
-        return(
+        return (
             <div id="header">
                 <div id="main">
                     <div className="top">
@@ -28,7 +35,7 @@ class Brother extends Component {
                         </div>
                         <div className="center">
                             <form action="">
-                                <input type="text" value={this.state.name1}/>
+                                <input type="text" placeholder={this.state.name1} onChange={this.change.bind(this)}/>
                                 <button></button>
                             </form>
                             <div className="tag">
@@ -50,10 +57,10 @@ class Brother extends Component {
                             热 门 分 类
                         </div>
                         <div className="nav">
-                            {((arr)=>{
-                               return arr.map((e,i)=>{
-                                  return <a href="javascript:void(0)" key={i}>{e}</a>
-                               })
+                            {((arr) => {
+                                return arr.map((e, i) => {
+                                    return <a href="javascript:void(0)" key={i}>{e}</a>
+                                })
                             })(this.state.arr)}
                         </div>
                     </div>
@@ -69,7 +76,5 @@ export default connect((state) => {
         state
     }
 }, (dipatch) => {
-    return {
-
-    }
+    return {}
 })(Brother);
