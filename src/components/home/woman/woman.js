@@ -24,7 +24,7 @@ class Tuijian extends Component {
                 <div className="main" style={{overflow: "hidden"}}>
                     <div className="man-l">
                         <div className="man-l-t">
-                            <h5>{this.state.name}<span>男生专区></span></h5>
+                            <h5>{this.state.name}<span>女生专区></span></h5>
                         </div>
                         <div className="man-l-b">
                             <div className="left">

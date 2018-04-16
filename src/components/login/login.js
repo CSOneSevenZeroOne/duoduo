@@ -47,7 +47,13 @@ class Update extends Component {
     }
     render() {
         return (
-            <div id="login">
+            <div id="login" style={(()=>{
+                if (this.props.state.bool) {
+                    return {display:'block'}
+                }else {
+                    return {display:'none'}
+                }
+            })()}>
                 <div className="log">
                     <h3>登录</h3>
                     <form action="">
@@ -61,7 +67,7 @@ class Update extends Component {
                         </p>
                         <p>还没有帐号？<span>立即注册</span></p>
                     </form>
-                    <span className="ii" style={{"backgroundImage":'url('+this.state.src+')'}}></span>
+                    <span className="ii" style={{"backgroundImage":'url('+this.state.src+')'}} onClick={this.props.hide.bind(this)}></span>
                 </div>
             </div>
         )
@@ -73,6 +79,13 @@ export default connect((state) => {
     return {
         state
     }
-}, (dipatch) => {
-    return {}
+}, (dispatch) => {
+    return {
+        hide(){
+            dispatch({
+                type : "Bool",
+                bool : false
+            })
+        }
+    }
 })(Update);

@@ -7,6 +7,8 @@
   height: 260px;
   background: #ff6600;
   float: left;
+  position: relative;
+  z-index: 9;
 }
 .fenlei .fenlei-l .fenlei-l-t {
   height: 210px;

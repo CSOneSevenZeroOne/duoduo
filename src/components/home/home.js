@@ -4,7 +4,7 @@ import React, {
     Component
 } from 'react';
 
-import Fenye from './fenye/fenlei'
+import Fenye from './fenye/fenye'
 import Tuijian from './tuijian/tuijian'
 import Free from './free/free'
 import Man from './man/man'
