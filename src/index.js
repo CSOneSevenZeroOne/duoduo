@@ -4,15 +4,15 @@ import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 import Home from './components/home/home'
-
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
 import { HashRouter, Route, Link } from "react-router-dom";
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 //仓库
 let store = createStore((state = {
-	num:1,
-	skill:"ps"
+
 }, action) => {
 	switch(action.type) {
 		case 'ABC':
@@ -27,7 +27,9 @@ ReactDOM.render(
 	<HashRouter>
 		<Provider store={store}>
 			<div>
+				<Header/>
                 <Route exact path="/" component={Home} />
+				<Footer/>
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));

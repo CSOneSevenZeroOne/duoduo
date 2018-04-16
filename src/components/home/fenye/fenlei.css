@@ -1,0 +1,81 @@
+.fenlei {
+  height: 260px;
+  overflow: hidden;
+}
+.fenlei .fenlei-l {
+  width: 216px;
+  height: 260px;
+  background: #ff6600;
+  float: left;
+}
+.fenlei .fenlei-l .fenlei-l-t {
+  height: 210px;
+  padding-left: 5px;
+}
+.fenlei .fenlei-l .fenlei-l-t a {
+  color: #fff;
+  font-size: 13px;
+  line-height: 40px;
+  padding: 0 9px;
+}
+.fenlei .fenlei-l .fenlei-l-t a:hover {
+  text-decoration: underline;
+}
+.fenlei .fenlei-l .fenlei-l-b {
+  height: 50px;
+  font-size: 14px;
+  color: #fff;
+  padding: 6px 13px 0;
+}
+.fenlei .fenlei-l .fenlei-l-b a {
+  color: #fff;
+}
+.fenlei .fenlei-l .fenlei-l-b span {
+  float: right;
+  cursor: pointer;
+}
+.fenlei .fenlei-m {
+  float: left;
+  width: 748px;
+  height: 250px;
+  overflow: hidden;
+  padding: 10px 0 0 10px;
+}
+.fenlei .fenlei-m .lunbo {
+  width: 200%;
+  height: 250px;
+  overflow: hidden;
+}
+.fenlei .fenlei-m .lunbo li {
+  float: left;
+  width: 748px;
+  height: 250px;
+}
+.fenlei .fenlei-m .lunbo li img {
+  width: 100%;
+}
+.fenlei .fenlei-r {
+  width: 190px;
+  height: 250px;
+  background: #fff;
+  float: right;
+  margin-top: 10px;
+  padding: 0 13px;
+}
+.fenlei .fenlei-r ul {
+  margin-top: 10px;
+}
+.fenlei .fenlei-r ul li:nth-of-type(1) a {
+  font-size: 16px;
+  color: #ff6600;
+}
+.fenlei .fenlei-r ul li {
+  margin-top: 16px;
+}
+.fenlei .fenlei-r ul li a {
+  font-size: 13px;
+  color: #4c4c4c;
+}
+.fenlei .fenlei-r ul li a:hover {
+  color: #ff6600;
+}

@@ -12,7 +12,8 @@ class Brother extends Component {
         this.state = {
             src:require("../../images/logo_03.png"),
             name:"汪美杰的专属小书屋",
-            name1:"斗罗大陆"
+            name1:"斗罗大陆",
+            arr:["首页","男生","女生","包月","完本","免费","排行榜"]
         }
     }
 
@@ -49,13 +50,11 @@ class Brother extends Component {
                             热 门 分 类
                         </div>
                         <div className="nav">
-                            <a href="javascript:void(0)">首页</a>
-                            <a href="javascript:void(0)">男生</a>
-                            <a href="javascript:void(0)">女生</a>
-                            <a href="javascript:void(0)">包月</a>
-                            <a href="javascript:void(0)">完本</a>
-                            <a href="javascript:void(0)">免费</a>
-                            <a href="javascript:void(0)">排行榜</a>
+                            {((arr)=>{
+                               return arr.map((e,i)=>{
+                                  return <a href="javascript:void(0)" key={i}>{e}</a>
+                               })
+                            })(this.state.arr)}
                         </div>
                     </div>
                 </div>
