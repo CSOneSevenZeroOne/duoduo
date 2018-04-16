@@ -1,0 +1,147 @@
+.man {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.man .man-l {
+  float: left;
+  width: 952px;
+}
+.man .man-l .man-l-t {
+  height: 42px;
+  border-bottom: 1px solid #d1cdcd;
+}
+.man .man-l .man-l-t h5 {
+  font-size: 18px;
+  color: #4c4c4c;
+  line-height: 42px;
+}
+.man .man-l .man-l-t span {
+  float: right;
+  color: #888;
+  font-size: 12px;
+  cursor: pointer;
+}
+.man .man-l .man-l-b {
+  overflow: hidden;
+}
+.man .man-l .man-l-b a {
+  color: #4c4c4c;
+}
+.man .man-l .man-l-b .left {
+  float: left;
+  width: 216px;
+  height: 430px;
+  background: #fff;
+  margin-top: 64px;
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.man .man-l .man-l-b .left a {
+  width: 186px;
+  text-align: center;
+  display: block;
+}
+.man .man-l .man-l-b .left .a1 {
+  font-size: 18px;
+  height: 24px;
+  line-height: 24px;
+  margin-top: 230px;
+}
+.man .man-l .man-l-b .left .a2 {
+  height: 16px;
+  line-height: 16px;
+  margin-top: 5px;
+  color: #888;
+}
+.man .man-l .man-l-b .left .a3 {
+  margin: 30px 0;
+  font-size: 14px;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.man .man-l .man-l-b .left .a3 .icon {
+  display: inline-block;
+  width: 17px;
+  height: 21px;
+  font-size: 12px;
+  line-height: 18px ;
+  background-position: -223px -116px;
+  color: #fff;
+  font-style: normal;
+}
+.man .man-l .man-l-b .left a:hover {
+  color: #F40;
+}
+.man .man-l .man-l-b .left .a4 {
+  width: 180px;
+  height: 240px;
+  display: block;
+  position: absolute;
+  top: -32px;
+  left: 18px;
+  box-shadow: 3px 0 5px 1px #EDE3EF;
+}
+.man .man-l .man-l-b .right {
+  float: right;
+  margin-top: 30px;
+}
+.man .man-l .man-l-b .right .a-t {
+  width: 708px;
+  height: 46px;
+  background: #f6f3ef;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  line-height: 46px;
+}
+.man .man-l .man-l-b .right .a-t:hover {
+  color: #FF4400;
+}
+.man .man-l .man-l-b .right ul {
+  overflow: hidden;
+  width: 708px;
+  margin-top: 18px;
+}
+.man .man-l .man-l-b .right ul li {
+  width: 228px;
+  height: 38px;
+  line-height: 32px;
+  margin-right: 8px;
+  float: left;
+  font-size: 14px;
+  overflow: hidden;
+}
+.man .man-l .man-l-b .right ul li .leibie {
+  float: left;
+  color: #888;
+}
+.man .man-l .man-l-b .right ul li .title {
+  float: left;
+  margin-left: 32px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 56%;
+  overflow: hidden;
+}
+.man .man-l .man-l-b .right ul li .title:hover {
+  color: #FF4400;
+}
+.man .man-r {
+  float: right;
+  width: 216px;
+  height: 42px;
+  border-bottom: 1px solid #d1cdcd;
+}
+.man .man-r .man-r-t h5 {
+  font-size: 18px;
+  color: #4c4c4c;
+  line-height: 42px;
+}
+.man .man-r .man-r-t span {
+  float: right;
+  color: #888;
+  font-size: 12px;
+  cursor: pointer;
+}

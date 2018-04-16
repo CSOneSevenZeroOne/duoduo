@@ -8,5 +8,10 @@ img{ border: 0;}
 th,h1,h2,h3,h4,h5,h6{ font-weight:normal;}
 
 ul li,ol li{ list-style:none;}
-
+i,em{font-style:normal}
 body{ font:12px "微软雅黑";}
+
+.main{
+    width: 1200px;
+    margin: 0 auto;
+}

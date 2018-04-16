@@ -1,12 +1,170 @@
 .sort {
   overflow: hidden;
   padding-top: 30px;
+  background-color: #f9f5f7;
+  color: #4c4c4c;
+  padding-bottom: 90px;
 }
 .sort .left {
   float: left;
   width: 216px;
 }
+.sort .left h2:nth-of-type(1) {
+  margin-top: 0;
+}
+.sort .left h2,
+.sort .left h3 {
+  font-weight: bold;
+  padding: 0 18px;
+}
+.sort .left h2 {
+  font-size: 18px;
+  margin-top: 50px;
+  line-height: 42px;
+  background-color: #ece8e5;
+  cursor: pointer;
+}
+.sort .left h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 38px;
+  cursor: pointer;
+}
+.sort .left h2:hover,
+.sort .left h3:hover,
+.sort .left ul li:hover {
+  color: red;
+}
+.sort .left ul {
+  overflow: hidden;
+  padding: 0 18px;
+}
+.sort .left ul li {
+  float: left;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 25px;
+  padding-right: 16px;
+}
 .sort .right {
   float: right;
   width: 956px;
+}
+.sort .right .loading {
+  text-align: center;
+  line-height: 1458px;
+}
+.sort .right .tag {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #f60;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #f60;
+}
+.sort .right .tag i {
+  float: right;
+  padding: 0 10px;
+  line-height: 17px;
+}
+.sort .right .search {
+  overflow: hidden;
+  line-height: 40px;
+  border-bottom: 1px solid #d1cdcd;
+}
+.sort .right .search li {
+  float: left;
+  padding-right: 20px;
+}
+.sort .right .search li i {
+  padding-right: 20px;
+  cursor: pointer;
+}
+.sort .right .search li .active {
+  color: red;
+}
+.sort .right .list .range {
+  line-height: 50px;
+}
+.sort .right .list .range span {
+  padding-right: 20px;
+}
+.sort .right .list .range .active {
+  color: #f60;
+}
+.sort .right .list ul {
+  overflow: hidden;
+}
+.sort .right .list ul li {
+  overflow: hidden;
+  float: left;
+  width: 450px;
+  margin-right: 25px;
+}
+.sort .right .list ul li img {
+  width: 142px;
+  height: 190px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+.sort .right .list ul li .right {
+  float: right;
+  width: 280px;
+}
+.sort .right .list ul li .right h4 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4c4c4c;
+  font-weight: bold;
+}
+.sort .right .list ul li .right .author {
+  color: #888;
+  line-height: 24px;
+  font-size: 12px;
+}
+.sort .right .list ul li .right .msg {
+  line-height: 24px;
+  font-size: 14px;
+  color: #4c4c4c;
+  margin-top: 15px;
+}
+.sort .right .list ul li .right .read,
+.sort .right .list ul li .right .menu {
+  display: inline-block;
+  width: 123px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+.sort .right .list ul li .right .read {
+  background-color: #f60;
+  margin-right: 8px;
+  color: #fff;
+}
+.sort .right .list ul li .right .menu {
+  color: #4c4c4c;
+  background-color: #fff;
+  border: 1px solid #d1cdcd;
+}
+.sort .right .list .count {
+  text-align: center;
+}
+.sort .right .list .count span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sort .right .list .count .active {
+  background-color: #f60;
+  color: #fff;
 }

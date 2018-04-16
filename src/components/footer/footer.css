@@ -1,0 +1,75 @@
+#footer {
+  height: 470px;
+  background: #ece8e5;
+  border-bottom: 1px solid #d1cdcd;
+  border-top: 1px solid #d1cdcd;
+}
+#footer .foot-t {
+  height: 252px;
+  border-bottom: 1px solid #d1cdcd;
+  padding: 39px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: -90px;
+}
+#footer .foot-t dl {
+  float: left;
+  width: 223px;
+  margin-left: 80px;
+  overflow: hidden;
+}
+#footer .foot-t dl a {
+  color: #888;
+}
+#footer .foot-t dl dt {
+  margin-bottom: 30px;
+}
+#footer .foot-t dl dt p {
+  font-size: 16px;
+  color: #888;
+  position: relative;
+  padding-left: 36px;
+}
+#footer .foot-t dl dt p .icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+#footer .foot-t dl dd {
+  float: left;
+  margin-right: 20px;
+  height: 26px;
+  line-height: 26px;
+  white-space: nowrap;
+}
+#footer .foot-t dl:nth-of-type(4) dd {
+  width: 88px;
+  height: 128px;
+}
+#footer .foot-t dl:nth-of-type(4) dd a {
+  display: block;
+  width: 88px;
+  height: 128px;
+}
+#footer .foot-t dl:nth-of-type(4) dd a img {
+  margin-top: 6px;
+}
+#footer .foot-b {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  line-height: 20px;
+}
+#footer .foot-b .f-nav {
+  margin: 30px 0;
+}
+#footer .foot-b .f-nav a {
+  margin: 0 30px;
+  color: #888;
+}
+#footer .foot-b .pp {
+  margin: 20px 0;
+}

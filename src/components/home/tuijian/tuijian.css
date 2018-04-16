@@ -1,0 +1,101 @@
+.tuijian {
+  margin-top: 30px;
+  height: 554px;
+  overflow: hidden;
+}
+.tuijian .tuijian-l {
+  float: left;
+  width: 952px;
+}
+.tuijian .tuijian-l .tj-l-t {
+  height: 42px;
+  border-bottom: 1px solid #d1cdcd;
+}
+.tuijian .tuijian-l .tj-l-t h5 {
+  font-size: 18px;
+  color: #4c4c4c;
+  line-height: 42px;
+}
+.tuijian .tuijian-l .tj-l-t span {
+  float: right;
+  color: #888;
+  font-size: 12px;
+  cursor: pointer;
+}
+.tuijian .tuijian-l .tuijian-l-b ul {
+  overflow: hidden;
+  margin-top: 30px;
+  margin-right: -20px;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li {
+  width: 142px;
+  height: 224px;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li #box {
+  position: relative;
+  overflow: hidden;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li #box img {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li #box .yincang {
+  width: 142px;
+  height: 190px;
+  position: absolute;
+  top: 172px;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li #box .yincang p {
+  position: absolute;
+  padding: 0 10px 8px;
+  line-height: 22px;
+  height: 126px;
+  overflow: hidden;
+  color: #fff;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li #box .yincang span {
+  display: block;
+  width: 122px;
+  height: 30px;
+  line-height: 30px;
+  background: #f60;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+}
+.tuijian .tuijian-l .tuijian-l-b ul li h4 {
+  font-size: 13px;
+  color: #4c4c4c;
+  line-height: 16px;
+  width: 100%;
+  margin-top: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.tuijian .tuijian-r {
+  float: right;
+  width: 216px;
+  height: 42px;
+  border-bottom: 1px solid #d1cdcd;
+}
+.tuijian .tuijian-r .tj-r-t h5 {
+  font-size: 18px;
+  color: #4c4c4c;
+  line-height: 42px;
+}
+.tuijian .tuijian-r .tj-r-t span {
+  float: right;
+  color: #888;
+  font-size: 12px;
+  cursor: pointer;
+}
