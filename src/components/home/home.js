@@ -10,7 +10,9 @@ import Free from './free/free'
 import Man from './man/man'
 import Woman from './woman/woman'
 import Wanben from './wanben/wanben'
+import Fenlei from './fenlei/fenlei'
 import Guding from  './guding/guding'
+import Update from  './update/update'
 import { Route,Link } from "react-router-dom";
 // 库 框架
 class Home extends Component {
@@ -32,6 +34,8 @@ class Home extends Component {
                    <Man/>
                    <Woman/>
                    <Wanben/>
+                   <Fenlei/>
+                   <Update/>
                    <Guding/>
                </div>
            </div>

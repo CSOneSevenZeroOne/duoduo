@@ -47,7 +47,7 @@ class Tuijian extends Component {
                                     {((arr)=>{
                                         return arr.map((e,i)=>{
                                             return <li key={i}>
-                                                <a href="#" className="leibie">[{e.class}]</a>
+                                                <a href="#" className="leibie">[{e.class.split("：")[1]}]</a>
                                                 <a href="#" className="title">{e.title}</a>
                                             </li>
                                         })
@@ -80,7 +80,6 @@ class Tuijian extends Component {
             self.setState({
                 arr:res
             })
-            console.log(self.state.arr);
         })
     }
 }

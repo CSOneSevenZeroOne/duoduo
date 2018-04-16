@@ -8,6 +8,8 @@ import Home from './components/home/home';
 import Sort from './components/sort/sort';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
+import Register from './components/register/register'
+
 
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -23,14 +25,16 @@ let store = createStore((state = {
     }
 })
 ReactDOM.render(
-    <HashRouter>
-        <Provider store={store}>
-            <div>
-                <Header/>
-                <Route exact path="/" component={Home}/>
+
+	<HashRouter>
+		<Provider store={store}>
+			<div>
+				<Header/>
+                <Route exact path="/" component={Home} />
                 <Route path='/sort' component={Sort}/>
-                <Footer/>
-            </div>
-        </Provider>
-    </HashRouter>, document.getElementById('root'));
+                <Route exact path="/register" component={Register} />
+				<Footer/>
+			</div>
+		</Provider>
+	</HashRouter>, document.getElementById('root'));
 registerServiceWorker();

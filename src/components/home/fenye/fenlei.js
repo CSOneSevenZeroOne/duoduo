@@ -24,13 +24,13 @@ class Fenye extends Component {
                         <div className="fenlei-l-t">
                             {((arr) => {
                                 return arr.map((e, i) => {
-                                    return <a href="javascript:void(0)" key={i}>{e}</a>
+                                    return <Link to="/sort" key={i}>{e}</Link>
                                 })
                             })(this.state.arr)}
                         </div>
                         <div className="fenlei-l-b">
                             <a href="javascript:void(0)">同人小说</a>
-                            <span>全部分类 ></span>
+                            <Link to="/sort" className="aa">全部分类 ></Link>
                         </div>
                     </div>
 

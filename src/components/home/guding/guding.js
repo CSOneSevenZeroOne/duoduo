@@ -4,8 +4,8 @@ import React, {
     Component
 } from 'react';
 
-
-import { Route,Link } from "react-router-dom";
+import $ from "jquery"
+// import { Route,Link } from "react-router-dom";
 // 库 框架
 class Home extends Component {
     constructor(props) {
@@ -15,18 +15,39 @@ class Home extends Component {
         }
     }
 
+    back(){
+        $('html ,body').animate({scrollTop: 0}, 300);
+    }
+    free(){
+        $('html ,body').animate({scrollTop: 1000}, 300);
+    }
+    man(){
+        $('html ,body').animate({scrollTop: 1520}, 300);
+    }
+    woman(){
+        $('html ,body').animate({scrollTop: 2090}, 300);
+    }
+    wanben(){
+        $('html ,body').animate({scrollTop: 2680}, 300);
+    }
+    fenlei(){
+        $('html ,body').animate({scrollTop: 3200}, 300);
+    }
+    gengxin(){
+        $('html ,body').animate({scrollTop: 3900}, 300);
+    }
     render() {
         return(
             <div>
                 <div className="fixed-btn hide" id="floatFunc">
                     <div className="fixed-back"></div>
-                    <a className="fixed-mf" href="#free">限时免费</a>
-                    <a href="#man">男生最爱</a>
-                    <a href="#woman">女生最爱</a>
-                    <a href="#wanben">最近完本</a>
-                    <a href="#">分类热门</a>
-                    <a href="#">更新列表</a>
-                    <a href="#" className="go-top">返回顶部</a>
+                    <a className="fixed-mf" href="#" onClick={this.free.bind(this)}>限时免费</a>
+                    <a href="#" onClick={this.man.bind(this)}>男生最爱</a>
+                    <a href="#" onClick={this.woman.bind(this)}>女生最爱</a>
+                    <a href="#" onClick={this.wanben.bind(this)}>最近完本</a>
+                    <a href="#" onClick={this.fenlei.bind(this)}>分类热门</a>
+                    <a href="#" onClick={this.gengxin.bind(this)}>更新列表</a>
+                    <a href="#" className="go-top" onClick={this.back.bind(this)}>返回顶部</a>
                 </div>
             </div>
         )

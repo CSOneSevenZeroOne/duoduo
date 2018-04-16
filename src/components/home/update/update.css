@@ -1,0 +1,17 @@
+#update {
+  margin-top: 24px;
+}
+#update h3 {
+  font-size: 18px;
+  color: #4d4d4d;
+}
+#update table {
+  width: 100%;
+  margin-top: 8px;
+}
+#update table thead th {
+  height: 32px;
+  background: #979290;
+  color: #fff;
+  border: 0;
+}
