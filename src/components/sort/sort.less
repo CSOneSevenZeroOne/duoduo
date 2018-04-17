@@ -10,7 +10,7 @@
     h2:nth-of-type(1){
       margin-top:0;
     }
-    h2,h3{
+    h2, h3{
       font-weight:bold;
       padding:0 18px;
     }
@@ -27,7 +27,7 @@
       line-height:38px;
       cursor:pointer;
     }
-    h2:hover,h3:hover,ul li:hover{
+    h2:hover, h3:hover, ul li:hover{
       color:red;
     }
     ul{
@@ -41,6 +41,39 @@
         padding-right:16px;
       }
     }
+    .free{
+      padding:0;
+      padding-top:15px;
+      li{
+        overflow:hidden;
+        margin-bottom:26px;
+        img{
+          float:left;
+          width:85px;
+          height:114px;
+          margin-right:12px;
+        }
+        .right{
+          float:left;
+          width:85px;
+          height:114px;
+          h4{
+            font-size:16px;
+            font-weight:bold;
+            color:#4c4c4c
+          }
+          .msg{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display:-webkit-box;
+            -webkit-line-clamp:3;
+            -webkit-box-orient:vertical;
+            line-height:20px;
+            height:60px;
+          }
+        }
+      }
+    }
   }
   .right{
     float:right;
@@ -52,19 +85,20 @@
     .tag{
       cursor:pointer;
       display:inline-block;
-      width:100px;
       height:20px;
       line-height:20px;
       border:1px solid #f60;
       padding-left:10px;
       box-sizing:border-box;
-      border-radius: 3px;
+      border-radius:3px;
       color:#f60;
+      margin-right:20px;
       i{
-      float:right;
+        margin-left:15px;
+        float:right;
         padding:0 10px;
         line-height:17px;
-    }
+      }
     }
     .search{
       overflow:hidden;
@@ -87,7 +121,6 @@
         line-height:50px;
         span{
           padding-right:20px;
-
         }
         .active{
           color:#f60
@@ -127,13 +160,13 @@
               color:#4c4c4c;
               margin-top:15px;
             }
-            .read,.menu{
+            .read, .menu{
               display:inline-block;
               width:123px;
               height:30px;
               line-height:30px;
               text-align:center;
-              border-radius: 5px;
+              border-radius:5px;
               margin-top:6px;
             }
             .read{
@@ -156,7 +189,7 @@
           width:28px;
           height:28px;
           line-height:28px;
-          border-radius: 5px;
+          border-radius:5px;
           cursor:pointer;
         }
         .active{

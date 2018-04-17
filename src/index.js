@@ -15,7 +15,8 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 //仓库
 let store = createStore((state = {
-    sort:""
+    sort:"",
+    book_id:0,
 }, action) =>{
     switch(action.type){
         case 'SORTS':
