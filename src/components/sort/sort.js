@@ -30,6 +30,22 @@ class Sort extends Component {
 
     componentDidMount(){
         var self = this;
+        console.log(window.location.href.split("#")[1].split("/")[1]);
+        switch(window.location.href.split("#")[1].split("/")[1]){
+            case "wanben":
+                this.setState({
+                    status1 : this.props.state.status,
+                });
+                break;
+            case "mianfei":
+                console.log(this.props.state.price);
+                this.setState({
+                    bookPrice : this.props.state.price,
+                });
+                break;
+            default:
+                break;
+        }
         this.setState({
             status : false,
         });
@@ -66,27 +82,7 @@ class Sort extends Component {
             })
         })
     }
-    //删除标记事件
-    delTag(str){
-        switch(str){
-            case "status1":
-                this.setState({
-                    status1:""
-                });
-                break;
-            case "bookPrice":
-                this.setState({
-                    bookPrice:""
-                });
-                break;
-            case "num":
-                this.setState({
-                    num1:0,
-                    num2:10000
-                });
-                break;
-        }
-    }
+
 
     //分页展示点击事件
     fanye(num){
@@ -154,6 +150,7 @@ class Sort extends Component {
 
     // 按小说价格搜索点击事件
     searchByPrice(str){
+        console.log(1);
         this.setState({
             index : 0,
             status : false,
@@ -282,29 +279,29 @@ class Sort extends Component {
                                     })()}
                                     {(()=>{
                                         if(this.state.status1!==""){
-                                            return <span className={'tag'}  onClick={this.delTag.bind(this,"status1")}>{this.state.status1}<i>x</i></span>
+                                            return <span className={'tag'}  onClick={this.searchByStatus.bind(this,"")}>{this.state.status1}<i>x</i></span>
                                         }
                                     })()}
                                     {(()=>{
                                         if(this.state.bookPrice!==""){
-                                            return <span className={'tag'} onClick={this.delTag.bind(this,"bookPrice")}>{this.state.bookPrice}<i>x</i></span>
+                                            return <span className={'tag'} onClick={this.searchByPrice.bind(this,"")}>{this.state.bookPrice}<i>x</i></span>
                                         }
                                     })()}
                                     {(()=>{
                                         if(this.state.num1!==0){
                                             switch(this.state.num1){
                                                 case 10 :
-                                                    return <span className={'tag'} onClick={this.delTag.bind(this,"num")}>10万-50万字<i>x</i></span>
+                                                    return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>10万-50万字<i>x</i></span>
                                                 case 50 :
-                                                    return <span className={'tag'} onClick={this.delTag.bind(this,"num")}>50万-100万字<i>x</i></span>
+                                                    return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>50万-100万字<i>x</i></span>
                                                 case 100 :
-                                                    return <span className={'tag'} onClick={this.delTag.bind(this,"num")}>100万以上<i>x</i></span>
+                                                    return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>100万以上<i>x</i></span>
                                             }
                                         }else {
                                             if(this.state.num2===10000){
                                                 return;
                                             }else {
-                                                return <span className={'tag'} onClick={this.delTag.bind(this,"num")}>10万以下<i>x</i></span>
+                                                return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>10万以下<i>x</i></span>
                                             }
                                         }
                                     })()}
@@ -364,8 +361,8 @@ class Sort extends Component {
                                                                 'WebkitBoxOrient' : 'vertical'
                                                             }} className="msg">{e.msg}</p>
                                                             <p>
-                                                                <Link to="/info" onClick={this.props.changeBookId(e.id)} className='read'>立即阅读</Link>
-                                                                <Link to="/menu" className='menu' onClick={this.props.changeBookId(e.id)}>查看目录</Link>
+                                                                <Link to="/info" onClick={this.props.changeBookId.bind(this,e.id)} className='read'>立即阅读</Link>
+                                                                <Link to="/menu" className='menu' onClick={this.props.changeBookId.bind(this,e.id)}>查看目录</Link>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -410,7 +407,6 @@ class Sort extends Component {
 }
 
 export default connect((state) =>{
-    // console.log(Sort.state.index);
     return {
         state
     }
@@ -450,7 +446,7 @@ export default connect((state) =>{
         },
         changeBookId(id){
             dispatch({
-                type : "changeBookId",
+                type : "CHANGEBOOKID",
                 sort : id
             })
         }

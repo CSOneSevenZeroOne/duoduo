@@ -17,18 +17,23 @@ import {Provider} from 'react-redux'
 let store = createStore((state = {
     sort:"",
     book_id:0,
+    section:0,
+    status:"",
+    price:""
 }, action) =>{
     switch(action.type){
         case 'SORTS':
-            return Object.assign({}, state, {sort : action.sort});
+            return Object.assign({}, state, {sort : action.sort,status : "",price : ""});
         case 'WANBEN':
-            return Object.assign({}, state, {sort : action.waneben});
+            return Object.assign({}, state, {sort : "",status : action.wanben,price : ""});
         case 'MIANFEI':
-            return Object.assign({}, state, {sort : action.mianfei});
+            return Object.assign({}, state, {sort : "",status : "",price : action.mianfei});
         case 'BOOl':
             return Object.assign({}, state, {bool : action.bool});
         case 'BOOll':
             return Object.assign({}, state, {booll : action.booll});
+        case "CHANGEBOOKID":
+            return Object.assign({}, state, {book_id : action.book_id});
         default:
             return state
     }
@@ -40,7 +45,10 @@ ReactDOM.render(
 			<div>
 				<Header/>
                 <Route exact path="/" component={Home} />
-                <Route path='/sort' component={Sort}/>
+                <Route path='/nansheng' component={Sort}/>
+                <Route path='/nvsheng' component={Sort}/>
+                <Route path='/wanben' component={Sort}/>
+                <Route path='/mianfei' component={Sort}/>
                 <Route exact path="/register" component={Register} />
 				<Footer/>
 			</div>

@@ -49,12 +49,12 @@ router.get("/sort", function(req, res){
                         })
                     });
                 }else{
-                    var str = "select count(*) from `list` where class1=? and words>? and words<?";
+                    var str = "select count(*) from `list` where class=? and words>? and words<?";
                     mysql(str, ["类型："+req.query.sort,parseInt(req.query.num1),parseInt(req.query.num2)], function(results){
                         var obj = {
                             count : results
                         };
-                        var str = "select * from `list` where class1=? and words>? and words<? order by id desc LIMIT ?,18";
+                        var str = "select * from `list` where class=? and words>? and words<? order by id desc LIMIT ?,18";
                         mysql(str, ["类型：" + req.query.sort,parseInt(req.query.num1),parseInt(req.query.num2), req.query.index * 18], function(results){
                             obj.list = results;
                             res.send(obj)
