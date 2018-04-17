@@ -46,18 +46,50 @@
   line-height: 25px;
   padding-right: 16px;
 }
+.sort .left .free {
+  padding: 0;
+  padding-top: 15px;
+}
+.sort .left .free li {
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+.sort .left .free li img {
+  float: left;
+  width: 85px;
+  height: 114px;
+  margin-right: 12px;
+}
+.sort .left .free li .right {
+  float: left;
+  width: 85px;
+  height: 114px;
+}
+.sort .left .free li .right h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4c4c4c;
+}
+.sort .left .free li .right .msg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+  height: 60px;
+}
 .sort .right {
   float: right;
   width: 956px;
 }
 .sort .right .loading {
   text-align: center;
-  line-height: 1458px;
+  line-height: 458px;
 }
 .sort .right .tag {
   cursor: pointer;
   display: inline-block;
-  width: 100px;
   height: 20px;
   line-height: 20px;
   border: 1px solid #f60;
@@ -65,8 +97,10 @@
   box-sizing: border-box;
   border-radius: 3px;
   color: #f60;
+  margin-right: 20px;
 }
 .sort .right .tag i {
+  margin-left: 15px;
   float: right;
   padding: 0 10px;
   line-height: 17px;

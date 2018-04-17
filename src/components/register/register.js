@@ -4,7 +4,6 @@ import React, {
     Component
 } from 'react';
 
-import {Route, Link} from "react-router-dom";
 import $ from "jquery"
 // 库 框架
 class Update extends Component {
@@ -34,12 +33,21 @@ class Update extends Component {
 
         var self = this;
 
-        this.state.flag1 = /^\w{6,16}$/.test(e.target.value);
-        if(this.state.flag1 == false) {
-            this.state.msg = "用户名不正确";
+        this.setState({
+            flag1:/^\w{6,16}$/.test(e.target.value)
+        })
+
+        var flag1 = /^\w{6,16}$/.test(e.target.value);
+
+        if(flag1 === false) {
+            this.setState({
+                msg : "用户名不正确"
+            })
         } else {
-            this.state.flag1=true;
-            this.state.msg = "";
+            this.setState({
+                flag1:true,
+                msg : ""
+            })
         }
 
         if(this.state.flag1) {
@@ -50,10 +58,10 @@ class Update extends Component {
                     u_name: e.target.value
                 },
                 success: function(res) {
-                    if(res.status == 0) {
+                    if(res.status === 0) {
                         self.state.msg = res.msg;
                         self.state.flag1 = false;
-                    } else if(res.status == 1) {
+                    } else if(res.status === 1) {
                         self.state.flag2 = true;
                     }
                 }
@@ -63,10 +71,11 @@ class Update extends Component {
     }
     tel(e) {
         this.setState({
-            tel:e.target.value
-        })
-        this.state.flag2 = /^((13[0-9])|(14[5-7])|(15[0-9])|(18[0-9]))\d{8}$/.test(e.target.value);
-        if(this.state.flag2 == false) {
+            tel:e.target.value,
+            flag2:/^((13[0-9])|(14[5-7])|(15[0-9])|(18[0-9]))\d{8}$/.test(e.target.value)
+        });
+        var flag2 = /^((13[0-9])|(14[5-7])|(15[0-9])|(18[0-9]))\d{8}$/.test(e.target.value);
+        if(flag2 === false) {
             this.setState({
                 msg2:"手机号不对"
             })
@@ -78,10 +87,11 @@ class Update extends Component {
     }
     pwd(e) {
         this.setState({
-            pwd:e.target.value
+            pwd:e.target.value,
+            flag3:/^\w{6,16}$/.test(e.target.value)
         })
-        this.state.flag3 = /^\w{6,16}$/.test(e.target.value);
-        if(this.state.flag3 == false) {
+        var flag3 = /^\w{6,16}$/.test(e.target.value);
+        if(flag3 === false) {
             this.setState({
                 msg3:"密码格式不正确"
             })
@@ -95,7 +105,7 @@ class Update extends Component {
         this.setState({
             pwd2:e.target.value
         })
-        if (this.state.pwd!=e.target.value) {
+        if (this.state.pwd!==e.target.value) {
             this.setState({
                 msg4:"密码不一致"
             })

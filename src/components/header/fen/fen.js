@@ -4,7 +4,7 @@ import React, {
     Component
 } from 'react';
 
-import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Fenye extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class Fenye extends Component {
                         <div className="fenlei-l-t">
                             {((arr) => {
                                 return arr.map((e, i) => {
-                                    return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
+                                    return <Link to="/nansheng" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
                                 })
                             })(this.state.arr)}
                         </div>
