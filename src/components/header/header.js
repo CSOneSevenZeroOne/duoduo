@@ -25,7 +25,6 @@ class Brother extends Component {
         this.setState({
             name1:e.target.value
         })
-        var self=this ;
         $.ajax({
             type: "post",
             url: "http://localhost:55555/home/cx",

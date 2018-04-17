@@ -4,8 +4,6 @@ import React, {
     Component
 } from 'react';
 
-// import {Route, Link} from "react-router-dom";
-import $ from "jquery"
 
 // 库 框架
 class Update extends Component {

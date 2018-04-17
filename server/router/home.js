@@ -20,6 +20,7 @@ router.get('/content', function(req, res, next) {
     })
 });
 router.get('/section', function(req, res, next) {
+    console.log(req.query.book_id);
     res.append("Access-Control-Allow-Origin", "*");
     var str = "select title from content where book_id=? order by section";
     mysql(str, [req.query.book_id%14+1], function(result) {
