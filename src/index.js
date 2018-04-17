@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Header from './components/header/header'
 import Home from './components/home/home';
 import Sort from './components/sort/sort';
+import Info from './components/info/info';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
 import Register from './components/register/register'
@@ -32,8 +33,6 @@ let store = createStore((state = {
             return Object.assign({}, state, {bool : action.bool});
         case 'BOOll':
             return Object.assign({}, state, {booll : action.booll});
-        case "CHANGEBOOKID":
-            return Object.assign({}, state, {book_id : action.book_id});
         default:
             return state
     }
@@ -49,6 +48,7 @@ ReactDOM.render(
                 <Route path='/nvsheng' component={Sort}/>
                 <Route path='/wanben' component={Sort}/>
                 <Route path='/mianfei' component={Sort}/>
+                <Route path='/info' component={Info}/>
                 <Route exact path="/register" component={Register} />
 				<Footer/>
 			</div>

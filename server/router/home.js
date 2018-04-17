@@ -15,17 +15,25 @@ router.get('/test', function(req, res, next) {
 router.get('/content', function(req, res, next) {
     res.append("Access-Control-Allow-Origin", "*");
     var str = "select * from content where section=? and book_id=?";
-    mysql(str, [req.query.index,req.query.book_id], function(result) {
+    mysql(str, [req.query.index,req.query.book_id%14+1], function(result) {
         res.json(result)
     })
 });
 router.get('/section', function(req, res, next) {
     res.append("Access-Control-Allow-Origin", "*");
-    var str = "select * from content where book_id=?";
-    mysql(str, [req.query.book_id], function(result) {
+    var str = "select title from content where book_id=? order by section";
+    mysql(str, [req.query.book_id%14+1], function(result) {
         res.json(result)
     })
 });
+
+router.get("/info",function(req, res, next){
+    res.append("Access-Control-Allow-Origin", "*");
+    var str="select * from list where id=?";
+    mysql(str, [req.query.book_id], function(result) {
+        res.json(result)
+    })
+})
 
 router.get("/sort", function(req, res){
     res.append("Access-Control-Allow-Origin", "*");

@@ -253,12 +253,14 @@ class Sort extends Component {
                                 return arr.map((e, i) =>{
                                     if(i <= 9){
                                         return <li key={i}>
-                                            <img src={e.img} alt=""/>
-                                            <div className="right">
-                                                <h4>{e.title}</h4>
-                                                <p>{e.author}</p>
-                                                <p className="msg">{e.msg}</p>
-                                            </div>
+                                            <Link to={"/info?book_id="+e.id}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="right">
+                                                    <h4>{e.title}</h4>
+                                                    <p>{e.author}</p>
+                                                    <p className="msg">{e.msg}</p>
+                                                </div>
+                                            </Link>
                                         </li>
                                     }
                                 })
@@ -361,8 +363,8 @@ class Sort extends Component {
                                                                 'WebkitBoxOrient' : 'vertical'
                                                             }} className="msg">{e.msg}</p>
                                                             <p>
-                                                                <Link to="/info" onClick={this.props.changeBookId.bind(this,e.id)} className='read'>立即阅读</Link>
-                                                                <Link to="/menu" className='menu' onClick={this.props.changeBookId.bind(this,e.id)}>查看目录</Link>
+                                                                <Link to={"/info?book_id="+e.id} className='read'>立即阅读</Link>
+                                                                <Link to={"/menu?book_id="+e.id} className='menu' >查看目录</Link>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -442,12 +444,6 @@ export default connect((state) =>{
             dispatch({
                 type : "SORTS",
                 sort : str
-            })
-        },
-        changeBookId(id){
-            dispatch({
-                type : "CHANGEBOOKID",
-                sort : id
             })
         }
     }
