@@ -9,6 +9,7 @@ import Sort from './components/sort/sort';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
 import Register from './components/register/register'
+import Conent from "./components/conent/conent"
 
 
 import {createStore} from 'redux'
@@ -41,6 +42,7 @@ ReactDOM.render(
                 <Route exact path="/" component={Home} />
                 <Route path='/sort' component={Sort}/>
                 <Route exact path="/register" component={Register} />
+                <Route path='/conent' component={Conent}/>
 				<Footer/>
 			</div>
 		</Provider>
