@@ -21,6 +21,14 @@ let store = createStore((state = {
     switch(action.type){
         case 'SORTS':
             return Object.assign({}, state, {sort : action.sort});
+        case 'WANBEN':
+            return Object.assign({}, state, {sort : action.waneben});
+        case 'MIANFEI':
+            return Object.assign({}, state, {sort : action.mianfei});
+        case 'BOOl':
+            return Object.assign({}, state, {bool : action.bool});
+        case 'BOOll':
+            return Object.assign({}, state, {booll : action.booll});
         default:
             return state
     }

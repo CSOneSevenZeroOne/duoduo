@@ -1,10 +1,11 @@
-import "./fenlei.css"
+import "./fenye.css"
 import {connect} from "react-redux"
 import React, {
     Component
 } from 'react';
 
 import {Route, Link} from "react-router-dom";
+
 
 class Fenye extends Component {
     constructor(props) {
@@ -24,12 +25,12 @@ class Fenye extends Component {
                         <div className="fenlei-l-t">
                             {((arr) => {
                                 return arr.map((e, i) => {
-                                    return <Link to="/sort" key={i}>{e}</Link>
+                                    return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
                                 })
                             })(this.state.arr)}
                         </div>
                         <div className="fenlei-l-b">
-                            <a href="javascript:void(0)">同人小说</a>
+                            <Link to="/sort">同人小说</Link>
                             <Link to="/sort" className="aa">全部分类 ></Link>
                         </div>
                     </div>
@@ -69,5 +70,12 @@ export default connect((state) => {
         state
     }
 }, (dipatch) => {
-    return {}
+    return {
+        sort(e){
+            dipatch({
+                type : "SORTS",
+                sort : e
+            })
+        }
+    }
 })(Fenye);

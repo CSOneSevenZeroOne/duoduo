@@ -35,7 +35,7 @@ class Tuijian extends Component {
                 <div className="main" style={{overflow: "hidden"}}>
                     <div className="tuijian-l">
                         <div className="tj-l-t">
-                            <h5>{this.state.name}<span>更多推荐 ></span></h5>
+                            <h5>{this.state.name}<span>更多完本 ></span></h5>
                         </div>
                         <div className="tuijian-l-b">
                             <ul>

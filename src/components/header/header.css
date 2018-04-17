@@ -6,6 +6,7 @@
 #header #main {
   width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 #header #main .top {
   overflow: hidden;
@@ -82,6 +83,9 @@
   line-height: 40px;
   color: #4c4c4c;
   float: left;
+}
+#header #main .bottom .b-fenlei:hover {
+  color: #ff6600;
 }
 #header #main .bottom .nav {
   float: left;
