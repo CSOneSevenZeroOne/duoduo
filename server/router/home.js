@@ -110,6 +110,35 @@ router.post('/', function(req, res, next){
     })
 });
 
+router.get('/bangdan', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str1 = ""
+    for (var i = 0; i < 10; i++) {
+        var num = parseInt(Math.random() * 2000) + 1
+        if (i > 0) {
+            str1 += " or id=" + num
+        } else {
+            str1 += "id=" + num
+        }
+    }
+
+    var str = "select * from `list` where "+str1;
+
+    mysql(str, [], function (results) {
+        res.send(results)
+
+    })
+});
+
+router.get('/gengxin', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str = "select * from `content` as a join list as b on a.book_id=b.id where status=1";
+    mysql(str, [], function (results) {
+        res.send(results)
+
+    })
+});
+
 router.post('/fenlei', function(req, res, next) {
     res.append("Access-Control-Allow-Origin","*");
     var str = "select * from `list` where class=? LIMIT 0,6";

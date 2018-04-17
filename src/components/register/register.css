@@ -14,9 +14,12 @@
 #register .reg p {
   width: 262px;
   line-height: 36px;
-  margin: 5px auto;
+  margin: 17px auto;
   font-size: 16px;
   text-align: center;
+}
+#register .reg p span {
+  color: red;
 }
 #register .reg p .tianxie {
   width: 131px;

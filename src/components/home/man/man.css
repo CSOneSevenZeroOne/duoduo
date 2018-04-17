@@ -145,3 +145,69 @@
   font-size: 12px;
   cursor: pointer;
 }
+.man .man-r ul {
+  margin-top: 11px;
+}
+.man .man-r ul li {
+  position: relative;
+  border-bottom: 1px solid #e1e5e9;
+  box-sizing: border-box;
+}
+.man .man-r ul li .icon {
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 16px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.man .man-r ul li i:nth-of-type(1) {
+  background-position: -254px -79px;
+}
+.man .man-r ul li .bb {
+  overflow: hidden;
+  height: 114px;
+}
+.man .man-r ul li .bb img {
+  width: 85px;
+  height: 114px;
+  float: left;
+}
+.man .man-r ul li .bb .righ {
+  float: left;
+  color: #888;
+  margin-left: 10px;
+  text-align: left;
+}
+.man .man-r ul li .bb .righ h4 {
+  font-size: 15px;
+  color: #4c4c4c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 120px;
+}
+.man .man-r ul li .bb .righ .p1 {
+  margin-top: 12px;
+  height: 30px;
+}
+.man .man-r ul li .bb .righ .p2 {
+  height: 30px;
+}
+.man .man-r ul li .cc {
+  height: 39px;
+  line-height: 39px;
+}
+.man .man-r ul li .cc .ss {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 120px;
+  display: inline-block;
+  margin-left: 40px;
+}

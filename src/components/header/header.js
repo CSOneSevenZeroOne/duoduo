@@ -16,7 +16,9 @@ class Brother extends Component {
             src: require("../../images/logo_03.png"),
             name: "汪美杰的专属小书屋",
             name1: "斗罗大陆",
-            arr: ["首页", "男生", "女生", "包月", "完本", "免费", "排行榜"]
+            arr: ["首页", "男生", "女生", "包月", "完本", "免费", "排行榜"],
+            bool:false,
+            user:""
         }
     }
 
@@ -35,6 +37,13 @@ class Brother extends Component {
         }).then(function (res) {
 
         })
+    }
+    esc(){
+        sessionStorage.clear();
+        this.setState({
+            bool :false
+        })
+
     }
 
     render() {
@@ -62,10 +71,26 @@ class Brother extends Component {
                                 <a href="javascript:void(0)">绝品小农民</a>
                             </div>
                         </div>
-                        <div className="right">
+                        <div className="right" style={(()=>{
+                            if (!this.state.bool) {
+                                return {display:'block'}
+                            }else {
+                                return {display:'none'}
+                            }
+                        })()}>
                             <a href="javascript:void(0)" onClick={this.props.show.bind(this)}>登录</a>
                             <Link to="/register">注册</Link>
                         </div>
+                        <div className="r" style={(()=>{
+                            if (this.state.bool) {
+                                return {display:'block'}
+                            }else {
+                                return {display:'none'}
+                            }
+                        })()}>
+                            欢迎登录 :{this.state.user} &nbsp;&nbsp;&nbsp; <span onClick={this.esc.bind(this)}>退出</span>
+                        </div>
+
                     </div>
 
                     <div className="bottom">
@@ -104,11 +129,24 @@ class Brother extends Component {
                             })(this.state.arr)}
                         </div>
                     </div>
-
                 </div>
-
             </div>
         )
+    }
+    componentDidMount() {
+        var name=sessionStorage.getItem("user")
+        if (name!=null) {
+            this.setState({
+                bool:true,
+                user:name
+            })
+        }else {
+            this.setState({
+                bool:false,
+
+            })
+        }
+
     }
 }
 
@@ -139,7 +177,7 @@ export default connect((state) => {
         sort(e){
             dispatch({
                 type : "SORTS",
-                sort : e
+                sort : e+"分类"
             })
         },
         wanben(e){
