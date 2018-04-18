@@ -25,13 +25,13 @@ class Fenye extends Component {
                         <div className="fenlei-l-t">
                             {((arr) => {
                                 return arr.map((e, i) => {
-                                    return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
+                                    return <Link to="/index/nansheng" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
                                 })
                             })(this.state.arr)}
                         </div>
                         <div className="fenlei-l-b">
-                            <Link to="/sort">同人小说</Link>
-                            <Link to="/sort" className="aa">全部分类 ></Link>
+                            <Link to="/index/nansheng">同人小说</Link>
+                            <Link to="/index/nansheng" className="aa">全部分类 ></Link>
                         </div>
                     </div>
 
