@@ -10,6 +10,7 @@ import Info from './components/info/info';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
 import Register from './components/register/register'
+import Conent from "./components/conent/conent"
 
 
 import {createStore} from 'redux'
@@ -50,6 +51,7 @@ ReactDOM.render(
                 <Route path='/mianfei' component={Sort}/>
                 <Route path='/info' component={Info}/>
                 <Route exact path="/register" component={Register} />
+                <Route path='/conent' component={Conent}/>
 				<Footer/>
 			</div>
 		</Provider>

@@ -240,7 +240,7 @@ class Info extends Component {
                 });
             })
             self.setState({
-                book_id :id,
+                book_id : id,
                 info : res[0]
             });
         })
@@ -248,7 +248,7 @@ class Info extends Component {
         $.ajax({
             type : 'POST',
             url : 'http://localhost:55555/home',
-            datLink : {
+            data : {
                 sort : self.state.name
             }
         }).then(function(res){
