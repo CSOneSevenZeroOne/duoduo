@@ -30,15 +30,13 @@ class Sort extends Component {
 
     componentDidMount(){
         var self = this;
-        console.log(window.location.href.split("#")[1].split("/")[1]);
-        switch(window.location.href.split("#")[1].split("/")[1]){
+        switch(window.location.href.split("#")[1].split("/")[2]){
             case "wanben":
                 this.setState({
                     status1 : this.props.state.status,
                 });
                 break;
             case "mianfei":
-                console.log(this.props.state.price);
                 this.setState({
                     bookPrice : this.props.state.price,
                 });
@@ -57,13 +55,12 @@ class Sort extends Component {
             data : {
                 sort : this.props.state.sort,
                 index : this.state.index,
-                status : this.state.status1,
-                bookPrice : this.state.bookPrice,
+                status : this.props.state.status,
+                bookPrice : this.props.state.price,
                 num1 : this.state.num1,
                 num2 : this.state.num2
             }
         }).then(function(res){
-            console.log(res);
             self.setState({
                 status : true,
                 list : res.list,
@@ -106,7 +103,6 @@ class Sort extends Component {
                 num2 : this.state.num2
             }
         }).then(function(res){
-            console.log(res);
             self.setState({
                 status : true,
                 list : res.list,
@@ -138,7 +134,6 @@ class Sort extends Component {
                 num2 : num2
             }
         }).then(function(res){
-            console.log(res);
             self.setState({
                 status : true,
                 list : res.list,
@@ -150,7 +145,6 @@ class Sort extends Component {
 
     // 按小说价格搜索点击事件
     searchByPrice(str){
-        console.log(1);
         this.setState({
             index : 0,
             status : false,
@@ -170,7 +164,6 @@ class Sort extends Component {
                 num2 : this.state.num2
             }
         }).then(function(res){
-            console.log(res);
             self.setState({
                 status : true,
                 list : res.list,
@@ -253,7 +246,7 @@ class Sort extends Component {
                                 return arr.map((e, i)=>{
                                     if(i <= 9){
                                         return <li key={i}>
-                                            <Link to={"/info?book_id="+e.id}>
+                                            <Link to={"/index/info?book_id="+e.id}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="right">
                                                     <h4>{e.title}</h4>
@@ -367,8 +360,9 @@ class Sort extends Component {
                                                                 'WebkitBoxOrient' : 'vertical'
                                                             }} className="msg">{e.msg}</p>
                                                             <p>
-                                                                <Link to={"/info?book_id="+e.id} className='read'>立即阅读</Link>
+                                                                <Link to={"/index/info?book_id="+e.id} className='read'>立即阅读</Link>
                                                                 <Link to={"/section?book_id="+e.id} className='menu' >查看目录</Link>
+
                                                             </p>
                                                         </div>
                                                     </li>
@@ -437,7 +431,6 @@ export default connect((state) =>{
                     num2 : this.state.num2
                 }
             }).then(function(res){
-                console.log(res);
                 self.setState({
                     status : true,
                     list : res.list,

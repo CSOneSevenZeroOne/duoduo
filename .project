@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>duoduokanshu</name>
+=======
+	<name>duoduo</name>
+>>>>>>> f92d4ba9f22fff41dbad63518fd69024782f5c5e
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +20,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1523954409523</id>
+=======
+			<id>1523930337783</id>
+>>>>>>> f92d4ba9f22fff41dbad63518fd69024782f5c5e
 			<name></name>
 			<type>26</type>
 			<matcher>

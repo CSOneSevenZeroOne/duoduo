@@ -3,14 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
-import Header from './components/header/header'
-import Home from './components/home/home';
-import Sort from './components/sort/sort';
-import Info from './components/info/info';
-import Section from './components/section/section';
-import Footer from './components/footer/footer';
+
+import Home from "./home";
 import {HashRouter, Route} from "react-router-dom";
-import Register from './components/register/register'
+import Content from "./components/conent/conent"
 
 
 import {createStore} from 'redux'
@@ -37,22 +33,16 @@ let store = createStore((state = {
         default:
             return state
     }
-})
+});
 ReactDOM.render(
 
 	<HashRouter>
 		<Provider store={store}>
 			<div>
-				<Header/>
-                <Route exact path="/" component={Home} />
-                <Route path='/nansheng' component={Sort}/>
-                <Route path='/nvsheng' component={Sort}/>
-                <Route path='/wanben' component={Sort}/>
-                <Route path='/mianfei' component={Sort}/>
-                <Route path='/info' component={Info}/>
-                <Route path='/section' component={Section}/>
-                <Route exact path="/register" component={Register} />
-				<Footer/>
+
+                <Route path="/index" component={Home} />
+                <Route path="/section" component={Home} />
+                <Route path="/content" component={Content} />
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));

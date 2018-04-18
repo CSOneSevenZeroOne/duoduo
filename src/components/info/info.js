@@ -279,7 +279,7 @@ class Info extends Component {
                 });
             })
             self.setState({
-                book_id :id,
+                book_id : id,
                 info : res[0]
             });
         })
