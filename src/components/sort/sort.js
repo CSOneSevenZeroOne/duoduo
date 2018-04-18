@@ -5,7 +5,7 @@ import React, {
     Component
 } from 'react';
 
-import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // 库 框架
 class Sort extends Component {
@@ -250,16 +250,20 @@ class Sort extends Component {
                         <h2>限时免费</h2>
                         <ol className="free">
                             {((arr) =>{
-                                return arr.map((e, i) =>{
+                                return arr.map((e, i)=>{
                                     if(i <= 9){
                                         return <li key={i}>
-                                            <img src={e.img} alt=""/>
-                                            <div className="right">
-                                                <h4>{e.title}</h4>
-                                                <p>{e.author}</p>
-                                                <p className="msg">{e.msg}</p>
-                                            </div>
+                                            <Link to={"/info?book_id="+e.id}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="right">
+                                                    <h4>{e.title}</h4>
+                                                    <p>{e.author}</p>
+                                                    <p className="msg">{e.msg}</p>
+                                                </div>
+                                            </Link>
                                         </li>
+                                    }else {
+                                        return '';
                                     }
                                 })
                             })(this.state.free)}
@@ -296,6 +300,8 @@ class Sort extends Component {
                                                     return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>50万-100万字<i>x</i></span>
                                                 case 100 :
                                                     return <span className={'tag'} onClick={this.searchByWords.bind(this,0,10000)}>100万以上<i>x</i></span>
+                                                default:
+                                                    break;
                                             }
                                         }else {
                                             if(this.state.num2===10000){
@@ -315,7 +321,7 @@ class Sort extends Component {
                                 <ul className={"search"}>
                                     <li>
                                         <span>按字数：</span>
-                                        <i className={(this.state.num1 === 0 && this.state.num2 == 10000) ? "active" : ""} onClick={this.searchByWords.bind(this, 0, 10000)}>全部</i>
+                                        <i className={(this.state.num1 === 0 && this.state.num2 === 10000) ? "active" : ""} onClick={this.searchByWords.bind(this, 0, 10000)}>全部</i>
                                         <i onClick={this.searchByWords.bind(this, 0, 10)} className={this.state.num2 === 10 ? "active" : ""}>10万字以下</i>
                                         <i onClick={this.searchByWords.bind(this, 10, 50)} className={this.state.num2 === 50 ? "active" : ""}>10-50万字</i>
                                         <i onClick={this.searchByWords.bind(this, 50, 100)} className={this.state.num2 === 100 ? "active" : ""}>50-100万字</i>
@@ -361,8 +367,8 @@ class Sort extends Component {
                                                                 'WebkitBoxOrient' : 'vertical'
                                                             }} className="msg">{e.msg}</p>
                                                             <p>
-                                                                <Link to="/info" onClick={this.props.changeBookId.bind(this,e.id)} className='read'>立即阅读</Link>
-                                                                <Link to="/menu" className='menu' onClick={this.props.changeBookId.bind(this,e.id)}>查看目录</Link>
+                                                                <Link to={"/info?book_id="+e.id} className='read'>立即阅读</Link>
+                                                                <Link to={"/menu?book_id="+e.id} className='menu' >查看目录</Link>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -443,13 +449,6 @@ export default connect((state) =>{
                 type : "SORTS",
                 sort : str
             })
-        },
-        changeBookId(id){
-            dispatch({
-                type : "CHANGEBOOKID",
-                sort : id
-            })
-          
         }
     }
 })(Sort);

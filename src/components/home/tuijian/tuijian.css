@@ -93,7 +93,73 @@
   color: #4c4c4c;
   line-height: 42px;
 }
-.tuijian .tuijian-r .tj-r-t span {
+.tuijian .tuijian-r .tj-r-t ul {
+  margin-top: 11px;
+}
+.tuijian .tuijian-r .tj-r-t ul li {
+  position: relative;
+  border-bottom: 1px solid #e1e5e9;
+  line-height: 39px;
+  box-sizing: border-box;
+}
+.tuijian .tuijian-r .tj-r-t ul li .icon {
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 16px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.tuijian .tuijian-r .tj-r-t ul li i:nth-of-type(1) {
+  background-position: -254px -79px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb {
+  overflow: hidden;
+  height: 114px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb img {
+  width: 85px;
+  height: 114px;
+  float: left;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb .righ {
+  float: left;
+  color: #888;
+  margin-left: 10px;
+  text-align: left;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb .righ h4 {
+  font-size: 15px;
+  color: #4c4c4c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 120px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb .righ .p1 {
+  margin-top: 12px;
+  height: 30px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .bb .righ .p2 {
+  height: 30px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .cc {
+  line-height: 39px;
+  height: 39px;
+}
+.tuijian .tuijian-r .tj-r-t ul li .cc .ss {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60px;
+  display: inline-block;
+}
+.tuijian .tuijian-r .tj-r-t .span {
   float: right;
   color: #888;
   font-size: 12px;

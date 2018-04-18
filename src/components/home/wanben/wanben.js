@@ -13,8 +13,11 @@ class Tuijian extends Component {
         super(props)
         this.state = {
             src: require('../../../images/qq.jpg'),
+            src1: require('../../../images/icon.png'),
             name: "最近完本",
-            arr: []
+            arr: [],
+            index:0,
+            arr1:[]
         }
     }
     slideup(i){
@@ -28,6 +31,11 @@ class Tuijian extends Component {
         $("#wanben .yincang").eq(i).stop().animate({
             top:172
         },300)
+    }
+    xianshi(i){
+        this.setState({
+            index:i
+        })
     }
     render() {
         return (
@@ -64,6 +72,28 @@ class Tuijian extends Component {
                     <div className="tuijian-r">
                         <div className="tj-r-t">
                             <h5>热门榜<span>更多 ></span></h5>
+                            <ul>
+                                {((arr)=>{
+                                    return arr.map((e,i)=>{
+                                        return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="righ">
+                                                    <i className="icon" style={{"backgroundImage":'url('+this.state.src1+')'}}>{i+1}</i>
+                                                    <h4>{e.title}</h4>
+                                                    <p className="p1">{e.author}</p>
+                                                    <p className="p2">{e.class}</p>
+                                                </div>
+                                            </div>
+                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                                <i className="icon" style={{"backgroundImage":'url('+this.state.src1+')'}}>{i+1}</i>
+                                                <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
+                                                <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
+                                            </div>
+                                        </li>
+                                    })
+                                })(this.state.arr1)}
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -83,6 +113,14 @@ class Tuijian extends Component {
 
             self.setState({
                 arr:res
+            })
+        })
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55555/home/bangdan',
+        }).then(function (res) {
+            self.setState({
+                arr1:res
             })
         })
     }

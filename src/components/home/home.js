@@ -13,7 +13,6 @@ import Wanben from './wanben/wanben'
 import Fenlei from './fenlei/fenlei'
 import Guding from  './guding/guding'
 import Update from  './update/update'
-import { Route,Link } from "react-router-dom";
 // 库 框架
 class Home extends Component {
     constructor(props) {

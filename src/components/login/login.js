@@ -4,7 +4,6 @@ import React, {
     Component
 } from 'react';
 
-import {Route, Link} from "react-router-dom";
 import $ from "jquery"
 
 // 库 框架
@@ -39,9 +38,10 @@ class Update extends Component {
                 u_pwd: self.state.pwd
             }
         }).done(function (res) {
-            if (res.length == 1) {
+            if (res.length === 1) {
                 alert("登录成功")
-                // sessionStorage.setItem('user', res[0].id);
+                sessionStorage.setItem('user', res[0].u_name);
+                window.location.href="#/"
             }
         })
     }
@@ -83,7 +83,7 @@ export default connect((state) => {
     return {
         hide(){
             dispatch({
-                type : "Bool",
+                type : "BOOl",
                 bool : false
             })
         }

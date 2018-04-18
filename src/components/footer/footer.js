@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import React, {
     Component
 } from 'react';
+import {Link} from "react-router-dom";
 
 
 // import { Route,Link } from "react-router-dom";
@@ -28,13 +29,13 @@ class Home extends Component {
                                     用户指南
                                 </p>
                             </dt>
-                            <dd><a href="#">如何注册</a></dd>
-                            <dd><a href="#">忘记密码</a></dd>
-                            <dd><a href="#">如何充值</a></dd>
-                            <dd><a href="#">会员体系</a></dd>
-                            <dd><a href="#">意见反馈及投诉</a></dd>
-                            <dd><a href="#">人工客服</a></dd>
-                            <dd><a href="#">用户交流QQ群：7424994</a></dd>
+                            <dd><Link to="#">如何注册</Link></dd>
+                            <dd><Link to="#">忘记密码</Link></dd>
+                            <dd><Link to="#">如何充值</Link></dd>
+                            <dd><Link to="#">会员体系</Link></dd>
+                            <dd><Link to="#">意见反馈及投诉</Link ></dd>
+                            <dd><Link to="#">人工客服</Link></dd>
+                            <dd><Link to="#">用户交流QQ群：7424994</Link></dd>
                         </dl>
                         <dl>
                             <dt>
@@ -42,9 +43,9 @@ class Home extends Component {
                                     会员包月
                                 </p>
                             </dt>
-                            <dd><a href="#">如何包月</a></dd>
-                            <dd><a href="#">包月特权</a></dd>
-                            <dd><a href="#">包月书城</a></dd>
+                            <dd><Link to="#">如何包月</Link></dd>
+                            <dd><Link to="#">包月特权</Link></dd>
+                            <dd><Link to="#">包月书城</Link></dd>
                         </dl>
                         <dl>
                             <dt>
@@ -52,7 +53,7 @@ class Home extends Component {
                                     商务合作
                                 </p>
                             </dt>
-                            <dd><a href="#">渠道：梁鑫 liangxin@sogou-inc.com</a></dd>
+                            <dd><Link to="#">渠道：梁鑫 liangxin@sogou-inc.com</Link></dd>
                         </dl>
                         <dl>
                             <dt>
@@ -61,21 +62,21 @@ class Home extends Component {
                                 </p>
                             </dt>
                             <dd>
-                                <a href="#"><h3>关注微信</h3><img src={this.state.src1} alt=""/></a>
+                                <Link to="#"><h3>关注微信</h3><img src={this.state.src1} alt=""/></Link>
                             </dd>
                             <dd>
-                                <a href="#"><h3>关注微博</h3><img src={this.state.src2} alt=""/></a>
+                                <Link to="#"><h3>关注微博</h3><img src={this.state.src2} alt=""/></Link>
                             </dd>
                         </dl>
                     </div>
                     <div className="foot-b">
                         <p className="f-nav">
-                            <a href="#">关于我们</a>
-                            <a href="#">官方微博</a>
-                            <a href="#">意见反馈及投诉</a>
-                            <a href="#">用户服务协议</a>
-                            <a href="#">隐私政策</a>
-                            <a href="#">网址大全</a>
+                            <Link to="#">关于我们</Link>
+                            <Link to="#">官方微博</Link>
+                            <Link to="#">意见反馈及投诉</Link>
+                            <Link to="#">用户服务协议</Link>
+                            <Link to="#">隐私政策</Link>
+                            <Link to="#">网址大全</Link>
                         </p>
                         <p>网络文化经营许可证京网文[2016]6432-852号</p>
                         <p>健康阅读公告，抵制不良小说，拒绝盗版小说。注意自我保护，谨防上当受骗。合理安排时间，享受健康生活。</p>

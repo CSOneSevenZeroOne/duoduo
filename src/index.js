@@ -7,6 +7,7 @@ import Header from './components/header/header'
 import Home from './components/home/home';
 import Info from './components/info/info';
 import Sort from './components/sort/sort';
+import Info from './components/info/info';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
 import Register from './components/register/register'
@@ -33,8 +34,6 @@ let store = createStore((state = {
             return Object.assign({}, state, {bool : action.bool});
         case 'BOOll':
             return Object.assign({}, state, {booll : action.booll});
-        case "CHANGEBOOKID":
-            return Object.assign({}, state, {book_id : action.book_id});
         default:
             return state
     }

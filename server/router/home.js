@@ -15,17 +15,26 @@ router.get('/test', function(req, res, next) {
 router.get('/content', function(req, res, next) {
     res.append("Access-Control-Allow-Origin", "*");
     var str = "select * from content where section=? and book_id=?";
-    mysql(str, [req.query.index,req.query.book_id], function(result) {
+    mysql(str, [req.query.index,req.query.book_id%14+1], function(result) {
         res.json(result)
     })
 });
 router.get('/section', function(req, res, next) {
+    console.log(req.query.book_id);
     res.append("Access-Control-Allow-Origin", "*");
-    var str = "select * from content where book_id=?";
-    mysql(str, [req.query.book_id], function(result) {
+    var str = "select title from content where book_id=? order by section";
+    mysql(str, [req.query.book_id%14+1], function(result) {
         res.json(result)
     })
 });
+
+router.get("/info",function(req, res, next){
+    res.append("Access-Control-Allow-Origin", "*");
+    var str="select * from list where id=?";
+    mysql(str, [req.query.book_id], function(result) {
+        res.json(result)
+    })
+})
 
 router.get("/sort", function(req, res){
     res.append("Access-Control-Allow-Origin", "*");
@@ -220,6 +229,35 @@ router.post('/', function(req, res, next){
 
     mysql(str,[req.body.sort],function(results){
         res.send(results)
+    })
+});
+
+router.get('/bangdan', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str1 = ""
+    for (var i = 0; i < 10; i++) {
+        var num = parseInt(Math.random() * 2000) + 1
+        if (i > 0) {
+            str1 += " or id=" + num
+        } else {
+            str1 += "id=" + num
+        }
+    }
+
+    var str = "select * from `list` where "+str1;
+
+    mysql(str, [], function (results) {
+        res.send(results)
+
+    })
+});
+
+router.get('/gengxin', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str = "select * from `content` as a join list as b on a.book_id=b.id where status=1";
+    mysql(str, [], function (results) {
+        res.send(results)
+
     })
 });
 
