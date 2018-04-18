@@ -5,6 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Header from './components/header/header'
 import Home from './components/home/home';
+import Info from './components/info/info';
 import Sort from './components/sort/sort';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
@@ -49,6 +50,7 @@ ReactDOM.render(
                 <Route path='/nvsheng' component={Sort}/>
                 <Route path='/wanben' component={Sort}/>
                 <Route path='/mianfei' component={Sort}/>
+                <Route path='/info' component={Info}/>
                 <Route exact path="/register" component={Register} />
 				<Footer/>
 			</div>

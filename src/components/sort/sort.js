@@ -449,6 +449,7 @@ export default connect((state) =>{
                 type : "CHANGEBOOKID",
                 sort : id
             })
+          
         }
     }
 })(Sort);

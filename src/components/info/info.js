@@ -16,7 +16,6 @@ class Info extends Component {
         }
     }
 	slideup(i){
-
         $(".yincang").eq(i).stop().animate({
             top:0
         },300)
