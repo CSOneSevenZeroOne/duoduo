@@ -5,7 +5,6 @@ import React, {
 } from 'react';
 
 import $ from "jquery"
-
 // 库 框架
 class Update extends Component {
     constructor(props) {
@@ -53,7 +52,7 @@ class Update extends Component {
 
         if(this.state.flag1) {
             $.ajax({
-                url: "http://localhost:55555/register",
+                url: "http://localhost:55555/register/aaa",
                 type: "post",
                 data: {
                     u_name: e.target.value
@@ -121,9 +120,7 @@ class Update extends Component {
 
     register() {
         var self = this;
-
         if(self.state.flag1 && self.state.flag2 && self.state.flag3&&self.state.flag4) {
-
             $.ajax({
                 type: "post",
                 url: "http://localhost:55555/register/register",
@@ -134,7 +131,8 @@ class Update extends Component {
                 }
             }).done((res) => {
                 alert("注册成功")
-                // window.location.href = "#/login"
+                window.location.href = "#/";
+                sessionStorage.setItem('user', self.state.name);
             })
         }
     }
@@ -164,27 +162,23 @@ class Update extends Component {
                             </label>
                             <span>{this.state.msg2}</span>
                         </p>
-                        <p style={{"padding-left": "52px"}}>
+                        <p style={{"paddingLeft": "52px"}}>
                             <label>
                                 密码 <input type="password" placeholder="请输入密码" onBlur={this.pwd.bind(this)}/>
                             </label>
                             <span>{this.state.msg3}</span>
                         </p>
-                        <p style={{"padding-left": "12px"}}>
+                        <p style={{"paddingLeft": "12px"}}>
                             <label>
                                 确认密码 <input type="password" placeholder="请确认密码" onBlur={this.pwd2.bind(this)}/>
                             </label>
                             <span>{this.state.msg4}</span>
                         </p>
-                        <p>
-                            <label>
-                                验证码 <input type="text" placeholder="请确认验证码"/>
-                            </label>
-                        </p>
+
                         <p className="p1">
                             <i className="icon" style={{"backgroundImage":'url('+this.state.src+')'}}></i>我已阅读并接受<span>《用户服务协议》</span><span>《隐私政策》</span>
                         </p>
-                        <p style={{"padding-left": "80px"}}>
+                        <p style={{"paddingLeft": "80px"}}>
                             <button type="button" onClick={this.register.bind(this)}>注册</button>
                         </p>
                     </form>
@@ -193,10 +187,7 @@ class Update extends Component {
         )
     }
 
-    componentWillMount() {
 
-
-    }
 }
 
 export default connect((state) => {

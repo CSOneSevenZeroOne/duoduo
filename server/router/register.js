@@ -10,7 +10,7 @@ router.post('/register', function(req, res, next) {
 
 });
 
-router.post('/', function(req, res, next) {
+router.post('/aaa', function(req, res, next) {
 	res.append("Access-Control-Allow-Origin", "*");
 	var str = "select * from `userinfo` where u_name=?";
 	mysql(str, [req.body.u_name], function(results) {

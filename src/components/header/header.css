@@ -69,6 +69,14 @@
 #header #main .top .right a:nth-last-of-type(1) {
   border-right: 0;
 }
+#header #main .top .r {
+  float: right;
+  margin-top: 10px;
+}
+#header #main .top .r span {
+  cursor: pointer;
+  color: #62abf4;
+}
 #header #main .bottom {
   overflow: hidden;
 }

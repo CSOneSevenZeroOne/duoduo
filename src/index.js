@@ -5,7 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Home from "./home";
 import {HashRouter, Route} from "react-router-dom";
-
+import Content from "./components/conent/conent"
 
 
 import {createStore} from 'redux'
@@ -40,7 +40,7 @@ ReactDOM.render(
 			<div>
                 <Route path="/index" component={Home} />
                 <Route path="/section" component={Home} />
-                <Route path="/content" component={Home} />
+                <Route path="/content" component={Content} />
 			</div>
 		</Provider>
 	</HashRouter>, document.getElementById('root'));
