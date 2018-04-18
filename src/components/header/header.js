@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from "jquery"
-import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Login from '../login/login'
 import Fen from './fen/fen'
 // 库 框架
@@ -43,7 +43,7 @@ class Brother extends Component {
                 <div id="main">
                     <div className="top">
                         <div className="left">
-                            <Link to="/">
+                            <Link to="/index">
                             <img src={this.state.src} alt=""/>
                             <span>{this.state.name}</span>
                             </Link>
@@ -63,7 +63,7 @@ class Brother extends Component {
                         </div>
                         <div className="right">
                             <a href="javascript:void(0)" onClick={this.props.show.bind(this)}>登录</a>
-                            <Link to="/register">注册</Link>
+                            <Link to="/index/register">注册</Link>
                         </div>
                     </div>
 
@@ -78,25 +78,27 @@ class Brother extends Component {
                                 return arr.map((e, i) => {
                                     switch (e){
                                         case "首页":
-                                            return <Link to="/" key={i}>{e}</Link>
+                                            return <Link to="/index" key={i}>{e}</Link>
                                         break;
                                         case "男生":
-                                            return <Link to="/nansheng" key={i} onClick={this.props.sort.bind(this,"男生分类")}>{e}</Link>
+                                            return <Link to="/index/nansheng" key={i} onClick={this.props.sort.bind(this,"男生分类")}>{e}</Link>
                                             break;
                                         case "女生":
-                                            return <Link to="/nvsheng" key={i} onClick={this.props.sort.bind(this,"女生分类")}>{e}</Link>
+                                            return <Link to="/index/nvsheng" key={i} onClick={this.props.sort.bind(this,"女生分类")}>{e}</Link>
                                             break;
                                         case "包月":
-                                            return <Link to="/sort" key={i} >{e}</Link>
+                                            return <Link to="/index/sort" key={i} >{e}</Link>
                                             break;
                                         case "完本":
-                                            return <Link to="/wanben" key={i} onClick={this.props.wanben.bind(this,e)}>{e}</Link>
+                                            return <Link to="/index/wanben" key={i} onClick={this.props.wanben.bind(this,"完本")}>{e}</Link>
                                             break;
                                         case "免费":
-                                            return <Link to="/mianfei" key={i} onClick={this.props.mianfei.bind(this,e)}>{e}</Link>
+                                            return <Link to="/index/mianfei" key={i} onClick={this.props.mianfei.bind(this,"免费")}>{e}</Link>
                                             break;
                                         case "排行榜":
-                                            return <Link to="/sort" key={i}>{e}</Link>
+                                            return <Link to="/index/sort" key={i}>{e}</Link>
+                                            break;
+                                        default:
                                             break;
                                     }
                                 })

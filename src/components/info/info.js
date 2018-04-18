@@ -248,7 +248,7 @@ class Info extends Component {
         $.ajax({
             type : 'POST',
             url : 'http://localhost:55555/home',
-            datLink : {
+            data : {
                 sort : self.state.name
             }
         }).then(function(res){
