@@ -3,12 +3,10 @@ import {connect} from "react-redux"
 import React, {
     Component
 } from 'react';
-<<<<<<< HEAD
+
 
 import $ from "jquery"
-=======
-import $ from 'jquery'
->>>>>>> 46a677edf717a3294a1b5dfe2b269d1b4811471e
+
 
 // 库 框架
 class Update extends Component {
@@ -47,7 +45,7 @@ class Update extends Component {
                                   <td>{e.words}万</td>
                                   <td>{e.author}</td>
                                   <td>{e.source}</td>
-                                  <td>开始阅读</td>
+                                  <td style={{color:"#ff6600",cursor:"pointer"}}>开始阅读 > </td>
                               </tr>
                           })
                         })(this.state.arr1)}
