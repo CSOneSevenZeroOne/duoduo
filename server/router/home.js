@@ -13,7 +13,6 @@ router.get('/test', function(req, res, next) {
 	})
 });
 router.get('/content', function(req, res, next) {
-    console.log(req.query.book_id % 14 + 1);
     res.append("Access-Control-Allow-Origin", "*");
     var str = "select a.*,b.author,b.words,b.class from content as a join list as b on a.name=b.title and a.section=? and a.book_id=?";
     mysql(str, [req.query.section,req.query.book_id%14+1], function(result) {
@@ -38,7 +37,6 @@ router.get("/info",function(req, res, next){
 
 router.get("/sort", function(req, res){
     res.append("Access-Control-Allow-Origin", "*");
-    console.log(req.query);
     //类型不为空
     if(req.query.sort != ""){
         //类型不为空  状态为空
@@ -156,7 +154,6 @@ router.get("/sort", function(req, res){
         }
     } else {
         if(req.query.status==""){
-            console.log(req.query.bookPrice,2);
             if(req.query.bookPrice!="免费"){
                 var str = "select count(*) from `list` where words>? and words<?";
                 mysql(str, [parseInt(req.query.num1),parseInt(req.query.num2)], function(results){
@@ -184,7 +181,6 @@ router.get("/sort", function(req, res){
             }
         }else {
             if(req.query.bookPrice!="免费"){
-                console.log(3);
                 var str = "select count(*) from `list` where words>? and words<? and status=?";
                 mysql(str, [parseInt(req.query.num1),parseInt(req.query.num2),req.query.status], function(results){
                     var obj = {
@@ -197,7 +193,6 @@ router.get("/sort", function(req, res){
                     })
                 });
             }else {
-                console.log(4);
                 var str = "select count(*) from `list` where words>? and words<? and bookPrice=?";
                 mysql(str, [parseInt(req.query.num1),parseInt(req.query.num2),"价格："+req.query.bookPrice], function(results){
                     var obj = {

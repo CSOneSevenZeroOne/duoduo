@@ -14,7 +14,6 @@ router.post('/aaa', function(req, res, next) {
 	res.append("Access-Control-Allow-Origin", "*");
 	var str = "select * from `userinfo` where u_name=?";
 	mysql(str, [req.body.u_name], function(results) {
-		console.log(results)
 		if(results.length > 0) {
 			res.json({
 				status: 0,
