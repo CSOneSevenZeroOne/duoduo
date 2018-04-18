@@ -19,7 +19,8 @@ class Info extends Component {
             name : "小编强推",
             arr : [],
             arr1:[],
-            index:0
+            index:0,
+            index2:0
         }
     }
 	slideup(i){
@@ -37,6 +38,11 @@ class Info extends Component {
 	xianshi(i){
         this.setState({
             index:i
+        })
+    }
+    xianshi2(i){
+        this.setState({
+            index2:i
         })
     }
     render(){
@@ -197,6 +203,7 @@ class Info extends Component {
                                 {((arr)=>{
                                     return arr.map((e,i)=>{
                                         return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                            <Link to={"/index/info?book_id="+e.id}>
                                             <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="righ">
@@ -211,6 +218,7 @@ class Info extends Component {
                                                 <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                                 <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
                                             </div>
+                                            </Link>
                                         </li>
                                     })
                                 })(this.state.arr1)}
@@ -225,8 +233,8 @@ class Info extends Component {
                             <ul className="top-list">
                                 {((arr)=>{
                                     return arr.map((e,i)=>{
-                                        return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
-                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                        return <li className="list" key={i} onMouseEnter={this.xianshi2.bind(this,i)}>
+                                            <div className="bb" style={{display:this.state.index2==i?"block":"none"}}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="righ">
                                                     <i className="icon">{i+1}</i>
@@ -235,7 +243,7 @@ class Info extends Component {
                                                     <p className="p2">{e.class}</p>
                                                 </div>
                                             </div>
-                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                            <div className="cc" style={{display:this.state.index2==i?"none":"block"}}>
                                                 <i className="icon">{i+1}</i>
                                                 <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                                 <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
