@@ -37,15 +37,17 @@ class Home extends Component {
 
         })
     }
-    tab(){
+    tab(num){
+        num=num<0?0:num;
         this.setState({
             status:false
-        })
+        });
+        console.log(window.location.href);
         var self=this;
         var arr = window.location.href.split("?")[1].split("&");
-        var obj={}
+        var obj={};
         obj[arr[0].split("=")[0]]=arr[0].split("=")[1];
-        obj[arr[1].split("=")[0]]=arr[1].split("=")[1];
+        obj[arr[1].split("=")[0]]=num;
 
         $.ajax({
             type : "get",
@@ -65,7 +67,6 @@ class Home extends Component {
         var obj={}
         obj[arr[0].split("=")[0]]=arr[0].split("=")[1];
         obj[arr[1].split("=")[0]]=arr[1].split("=")[1];
-
         $.ajax({
             type : "get",
             url : "http://localhost:55555/home/content",
@@ -177,7 +178,7 @@ class Home extends Component {
                                     var str=window.location.href.split("#")[1];
                                     var str1=str.split("&")[0]+"&section="+(str.split("&")[1].split("=")[1]-1)
                                     return str1
-                                })()} onClick={this.tab.bind(this)}>上一章</Link>
+                                })()} onClick={this.tab.bind(this,window.location.href.split("#")[1].split("&")[1].split("=")[1]-1)}>上一章</Link>
                                 <Link to={(()=>{
                                     var str=window.location.href.split("#")[1];
                                     var str1="/index"+str.split("&")[0].replace("content","section")
@@ -187,7 +188,7 @@ class Home extends Component {
                                     var str=window.location.href.split("#")[1];
                                     var str1=str.split("&")[0]+"&section="+(Number(str.split("&")[1].split("=")[1])+1)
                                     return str1
-                                })()} onClick={this.tab.bind(this)}>下一章</Link>
+                                })()} onClick={this.tab.bind(this,Number(window.location.href.split("#")[1].split("&")[1].split("=")[1])+1)}>下一章</Link>
                             </ul>
                         </div>
                     </div>

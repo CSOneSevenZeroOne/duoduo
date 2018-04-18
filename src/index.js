@@ -33,6 +33,8 @@ let store = createStore((state = {
             return state
     }
 });
+
+
 ReactDOM.render(
 
 	<HashRouter>
