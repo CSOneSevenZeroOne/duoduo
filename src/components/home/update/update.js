@@ -4,15 +4,14 @@ import React, {
     Component
 } from 'react';
 
-// import {Route, Link} from "react-router-dom";
-import $ from "jquery"
 
 // 库 框架
 class Update extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            arr:["序号","类型","小说名称","更新章节","状态","字数","作者","更新时间","阅读"]
+            arr:["序号","类型","小说名称","更新章节","状态","字数","作者","更新时间","阅读"],
+            arr1:[]
         }
     }
 
@@ -31,6 +30,23 @@ class Update extends Component {
                             })(this.state.arr)}
                         </tr>
                         </thead>
+                        <tbody>
+                        {/*{((arr)=>{*/}
+                          {/*return arr.map((e,i)=>{*/}
+                              {/*return <tr key={i}>*/}
+                                  {/*<td><i className="icon">{i+1}</i></td>*/}
+                                  {/*<td>{e}</td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                                  {/*<td></td>*/}
+                              {/*</tr>*/}
+                          {/*})*/}
+                        {/*})(this.state.arr1)}*/}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -38,8 +54,16 @@ class Update extends Component {
     }
 
     componentWillMount() {
-
-
+       var self=this;
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55555/home/gengxin',
+        }).then(function (res) {
+            console.log(res);
+            self.setState({
+                arr1:res
+            })
+        })
     }
 }
 

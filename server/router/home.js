@@ -20,6 +20,7 @@ router.get('/content', function(req, res, next) {
     })
 });
 router.get('/section', function(req, res, next) {
+    console.log(req.query.book_id);
     res.append("Access-Control-Allow-Origin", "*");
     var str = "select title from content where book_id=? order by section";
     mysql(str, [req.query.book_id%14+1], function(result) {
@@ -228,6 +229,35 @@ router.post('/', function(req, res, next){
 
     mysql(str,[req.body.sort],function(results){
         res.send(results)
+    })
+});
+
+router.get('/bangdan', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str1 = ""
+    for (var i = 0; i < 10; i++) {
+        var num = parseInt(Math.random() * 2000) + 1
+        if (i > 0) {
+            str1 += " or id=" + num
+        } else {
+            str1 += "id=" + num
+        }
+    }
+
+    var str = "select * from `list` where "+str1;
+
+    mysql(str, [], function (results) {
+        res.send(results)
+
+    })
+});
+
+router.get('/gengxin', function (req, res, next) {
+    res.append("Access-Control-Allow-Origin", "*");
+    var str = "select * from `content` as a join list as b on a.book_id=b.id where status=1";
+    mysql(str, [], function (results) {
+        res.send(results)
+
     })
 });
 

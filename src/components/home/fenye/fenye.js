@@ -4,7 +4,7 @@ import React, {
     Component
 } from 'react';
 
-import {Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 class Fenye extends Component {
@@ -52,7 +52,7 @@ class Fenye extends Component {
                             {((arr) => {
                                 return arr.map((e, i) => {
                                     return <li key={i}>
-                                        <a href="#">{e}</a>
+                                        <Link to="#">{e}</Link>
                                     </li>
                                 })
                             })(this.state.arr3)}

@@ -15,6 +15,7 @@ app.use(express.static(__dirname + '/files'));
 app.use(express.static('uploads'));
 
 app.use("/home",require("./router/home"));
+app.use("/register",require("./router/register"));
 
 app.listen(55555);
 console.log("开启服务器");
