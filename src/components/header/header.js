@@ -121,7 +121,7 @@ class Brother extends Component {
                                             return <Link to="/index/mianfei" key={i} onClick={this.props.mianfei.bind(this,"免费")}>{e}</Link>
                                             break;
                                         case "排行榜":
-                                            return <Link to="/index/sort" key={i}>{e}</Link>
+                                            return <Link to="/index/paihang" key={i}>{e}</Link>
                                             break;
                                         default:
                                             break;

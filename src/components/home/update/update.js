@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 import React, {
     Component
 } from 'react';
-import $ from 'jquery'
+import $ from "jquery"
 // 库 框架
 class Update extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ class Update extends Component {
                                   <td>{e.words}万</td>
                                   <td>{e.author}</td>
                                   <td>{e.source}</td>
-                                  <td>开始阅读</td>
+                                  <td style={{color:"#ff6600",cursor:"pointer"}}>开始阅读 > </td>
                               </tr>
                           })
                         })(this.state.arr1)}

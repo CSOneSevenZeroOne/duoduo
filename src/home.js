@@ -10,7 +10,7 @@ import Sort from './components/sort/sort';
 import Info from './components/info/info';
 import Footer from './components/footer/footer';
 import Register from './components/register/register'
-
+import Paihang from './components/paihang/paihang'
 import {Route} from "react-router-dom";
 // 库 框架
 class Index extends Component {
@@ -30,6 +30,7 @@ class Index extends Component {
                 <Route path='/index/wanben' component={Sort}/>
                 <Route path='/index/mianfei' component={Sort}/>
                 <Route path='/index/info' component={Info}/>
+                <Route path='/index/paihang' component={Paihang}/>
                 <Route path="/index/register" component={Register} />
                 <Footer/>
             </div>
