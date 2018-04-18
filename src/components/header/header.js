@@ -178,7 +178,7 @@ export default connect((state) => {
         sort(e){
             dispatch({
                 type : "SORTS",
-                sort : e+"分类"
+                sort : e
             })
         },
         wanben(e){

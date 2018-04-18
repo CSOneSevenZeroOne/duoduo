@@ -13,9 +13,10 @@ router.get('/test', function(req, res, next) {
 	})
 });
 router.get('/content', function(req, res, next) {
+    console.log(req.query.book_id % 14 + 1);
     res.append("Access-Control-Allow-Origin", "*");
-    var str = "select * from content where section=? and book_id=?";
-    mysql(str, [req.query.index,req.query.book_id%14+1], function(result) {
+    var str = "select a.*,b.author,b.words,b.class from content as a join list as b on a.name=b.title and a.section=? and a.book_id=?";
+    mysql(str, [req.query.section,req.query.book_id%14+1], function(result) {
         res.json(result)
     })
 });

@@ -122,7 +122,7 @@ class Info extends Component {
                                     </ul>
                                 </div>
                                 <div className="chapter-more">
-                                    <Link to="/section" pbflag="章节区" pbtag="全部章节" target="_blank">查看全部章节</Link>
+                                    <Link to={"/section?book_id="+window.location.href.split("?")[1].split("=")[1]} pbflag="章节区" pbtag="全部章节" target="_blank">查看全部章节</Link>
                                 </div>
                                 <div className="bdr-tit"><span className="text-title">猜你喜欢</span>
                                     <Link to="#" className="r fresh" pbflag="换一换" id="freshGuess">换一换</Link>
