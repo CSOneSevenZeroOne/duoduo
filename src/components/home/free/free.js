@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from 'jquery'
-// import {Route, Link} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 
 // 库 框架
 class Tuijian extends Component {
@@ -50,6 +50,7 @@ class Tuijian extends Component {
                                 {((arr) => {
                                     return arr.map((e, i) => {
                                         return <li key={i}>
+                                            <Link to={"/index/info?book_id="+e.id}>
                                             <div className="box" onMouseEnter={this.slideup.bind(this,i)} onMouseLeave={this.slidedown.bind(this,i)}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="yincang">
@@ -62,6 +63,7 @@ class Tuijian extends Component {
                                                 </div>
                                             </div>
                                             <h4>{e.title}</h4>
+                                            </Link>
                                         </li>
                                     })
                                 })(this.state.arr)}
@@ -76,6 +78,7 @@ class Tuijian extends Component {
                                 {((arr)=>{
                                     return arr.map((e,i)=>{
                                         return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                            <Link to={"/index/info?book_id="+e.id}>
                                             <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="righ">
@@ -90,6 +93,7 @@ class Tuijian extends Component {
                                                 <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                                 <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
                                             </div>
+                                            </Link>
                                         </li>
                                     })
                                 })(this.state.arr1)}

@@ -53,8 +53,10 @@ class Tuijian extends Component {
                                     {((arr)=>{
                                         return arr.map((e,i)=>{
                                             return <li key={i}>
+                                                <Link to={"/index/info?book_id="+e.id}>
                                                 <a href="#" className="leibie">[{e.class.split("：")[1]}]</a>
                                                 <a href="#" className="title">{e.title}</a>
+                                                </Link>
                                             </li>
                                         })
                                     })(this.state.arr)}
@@ -71,6 +73,7 @@ class Tuijian extends Component {
                             {((arr)=>{
                                 return arr.map((e,i)=>{
                                     return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                        <Link to={"/index/info?book_id="+e.id}>
                                         <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
                                             <img src={e.img} alt=""/>
                                             <div className="righ">
@@ -85,6 +88,7 @@ class Tuijian extends Component {
                                             <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                             <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
                                         </div>
+                                        </Link>
                                     </li>
                                 })
                             })(this.state.arr1)}

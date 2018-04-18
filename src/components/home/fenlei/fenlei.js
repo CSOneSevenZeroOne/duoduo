@@ -33,7 +33,7 @@ class Fenlei extends Component {
                             return arr.map((e, i) => {
                                 return <li key={i}>
                                     <h5>{e.type} <span>更多 ></span></h5>
-                                    <Link to="#" className="top">
+                                    <Link to={"/index/info?book_id="+e.list[0].id} className="top">
                                     <img src={e.list[0].img} alt=""/>
                                     <div>
                                     <h3>{e.list[0].title}</h3>
@@ -47,7 +47,7 @@ class Fenlei extends Component {
                                         {(function (arr) {
                                             var list=[];
                                             for (var i = 1; i < arr.length; i++) {
-                                                list.push(<li key={i}><Link to="#">[{arr[i].class.split("：")[1]}]</Link> <span>{arr[i].title}</span></li>)
+                                                list.push(<li key={i}><Link to="#">[{arr[i].class.split("：")[1]}]</Link> <Link to={"/index/info?book_id="+arr[i].id}><span>{arr[i].title}</span></Link></li>)
                                             }
                                             return list
                                         })(e.list)}

@@ -16,7 +16,7 @@ class Brother extends Component {
             src: require("../../images/logo_03.png"),
             name: "汪美杰的专属小书屋",
             name1: "斗罗大陆",
-            arr: ["首页", "男生", "女生", "包月", "完本", "免费", "排行榜"],
+            arr: ["首页", "男生", "女生", "完本", "免费", "排行榜"],
             bool:false,
             user:""
         }
@@ -110,9 +110,6 @@ class Brother extends Component {
                                             break;
                                         case "女生":
                                             return <Link to="/index/nvsheng" key={i} onClick={this.props.sort.bind(this,"女生分类")}>{e}</Link>
-                                            break;
-                                        case "包月":
-                                            return <Link to="/index/sort" key={i} >{e}</Link>
                                             break;
                                         case "完本":
                                             return <Link to="/index/wanben" key={i} onClick={this.props.wanben.bind(this,"完本")}>{e}</Link>
