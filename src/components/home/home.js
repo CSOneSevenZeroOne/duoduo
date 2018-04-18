@@ -24,7 +24,7 @@ class Home extends Component {
     render() {
         return(
            <div id="all">
-               <div className="content">
+               <div className="conten">
                    <Fenye />
                    <Tuijian />
                    <Free/>
@@ -32,7 +32,7 @@ class Home extends Component {
                    <Woman/>
                    <Wanben/>
                    <Fenlei/>
-                   <Update/>
+                   {/*<Update/>*/}
                    <Guding/>
                </div>
            </div>

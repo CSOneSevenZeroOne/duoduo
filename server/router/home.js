@@ -23,7 +23,7 @@ router.get('/content', function(req, res, next) {
 router.get('/section', function(req, res, next) {
     console.log(req.query.book_id);
     res.append("Access-Control-Allow-Origin", "*");
-    var str = "select title from content where book_id=? order by section";
+    var str = "select b.*,a.title,a.name,a.section from content as a join list as b on a.name=b.title and a.book_id=? order by section";
     mysql(str, [req.query.book_id%14+1], function(result) {
         res.json(result)
     })
@@ -244,9 +244,7 @@ router.get('/bangdan', function (req, res, next) {
             str1 += "id=" + num
         }
     }
-
     var str = "select * from `list` where "+str1;
-
     mysql(str, [], function (results) {
         res.send(results)
 
@@ -255,8 +253,9 @@ router.get('/bangdan', function (req, res, next) {
 
 router.get('/gengxin', function (req, res, next) {
     res.append("Access-Control-Allow-Origin", "*");
-    var str = "select * from `content` as a join list as b on a.book_id=b.id where status=1";
+    var str = "select b.*,a.title,a.name,a.section from `content` as a join list as b on a.name=b.title and a.status=1";
     mysql(str, [], function (results) {
+        console.log(results);
         res.send(results)
 
     })

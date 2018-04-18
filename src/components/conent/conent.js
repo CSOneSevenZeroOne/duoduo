@@ -38,7 +38,28 @@ class Home extends Component {
 
         })
     }
+    tab(){
+        this.setState({
+            status:false
+        })
+        var self=this;
+        var arr = window.location.href.split("?")[1].split("&");
+        var obj={}
+        obj[arr[0].split("=")[0]]=arr[0].split("=")[1];
+        obj[arr[1].split("=")[0]]=arr[1].split("=")[1];
 
+        $.ajax({
+            type : "get",
+            url : "http://localhost:55555/home/content",
+            data : obj
+        }).then(function(res){
+            self.setState({
+                status:true,
+                info:res
+            })
+            $(self.refs.essay).html(res[0].content)
+        })
+    }
     componentDidMount(){
         var self=this;
         var arr = window.location.href.split("?")[1].split("&");
@@ -148,10 +169,12 @@ class Home extends Component {
                                 </ul>
                             </div>
                         }else {
-                            return <p style={{
-                                lineHeight:"600px",
-                                textAlign:"center"
-                            }}>正在加载中，请稍后...</p>
+                            return <div className="main2">
+                                <p style={{
+                                    lineHeight:"480px",
+                                    textAlign:"center",
+                                    backgroundColor:"#f9f7f5"
+                                }}>正在加载中，请稍后...</p></div>
                         }
                     })()}
                     <div className="main2">
@@ -161,17 +184,17 @@ class Home extends Component {
                                     var str=window.location.href.split("#")[1];
                                     var str1=str.split("&")[0]+"&section="+(parseInt(str.split("&")[1].split("=")[1])-1)
                                     return str1
-                                })()}>上一章</Link>
-                                <a to={(()=>{
+                                })()} onClick={this.tab.bind(this)}>上一章</Link>
+                                <Link to={(()=>{
                                     var str=window.location.href.split("#")[1];
-                                    var str1=str.split("&")[0].replace("content","section")
+                                    var str1="/index"+str.split("&")[0].replace("content","section")
                                     return str1
-                                })()}>目录</a>
-                                <a to={(()=>{
+                                })()}>目录</Link>
+                                <Link to={(()=>{
                                     var str=window.location.href.split("#")[1];
                                     var str1=str.split("&")[0]+"&section="+(parseInt(str.split("&")[1].split("=")[1])+1)
                                     return str1
-                                })()}>下一章</a>
+                                })()} onClick={this.tab.bind(this)}>下一章</Link>
                             </ul>
                         </div>
                     </div>
