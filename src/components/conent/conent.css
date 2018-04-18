@@ -154,7 +154,7 @@
 .content .item a:hover,.content .all a:hover{
 	background: white;
 }
-.icon{
+.content .icon{
 	display: block;
 	width: 20px;
 	height: 20px;
