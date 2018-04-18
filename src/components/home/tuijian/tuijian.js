@@ -61,7 +61,7 @@ class Tuijian extends Component {
                                                         {e.msg}
                                                     </p>
                                                     <span>
-                                                    立即阅读
+                                                   		 立即阅读
                                                  </span>
                                                 </div>
                                             </div>

@@ -4,7 +4,7 @@ import React, {
     Component
 } from 'react';
 
-
+import $ from "jquery"
 // 库 框架
 class Update extends Component {
     constructor(props) {

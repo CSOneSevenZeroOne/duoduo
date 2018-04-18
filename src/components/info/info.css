@@ -318,6 +318,7 @@ a{
     position: relative;
     font-size: 18px;
     line-height: 35px;
+    margin-top: 30px;
 }
  .mix-nav-list {
     margin: 0;
@@ -363,26 +364,11 @@ a{
     right: 5px;
     bottom: 0;
 }
-.right .top-list {
-    margin-bottom: 30px;
-}
-.top-list .on .top-detail {
-    height: 136px;
-}
-.top-list .top-detail {
-    display: block;
-    height: 39px;
-    line-height: 39px;
-    width: 100%;
-    position: relative;
-    border-bottom: 1px solid #e1e5e9;
-}
+
 a:hover {
     color: #f60;
 }
-.top-list .on .book-author, .top-list .on .book-type, .top-list .on .top-detail img {
-    display: block;
-}
+
 .top-detail img {
     display: none;
     width: 85px;
@@ -391,7 +377,7 @@ a:hover {
     top: 11px;
     left: 0;
 }
-.top-list .top-detail .num1 {
+/*.top-list .top-detail .num1 {
     background-position: -254px -79px;
 }
 .top-list .top-detail .num2 {
@@ -399,7 +385,7 @@ a:hover {
 }
 .top-list .top-detail .num3 {
     background-position: -303px -79px;
-}
+}*/
 .top-detail .icon {
     position: absolute;
     left: 3px;
@@ -414,31 +400,88 @@ a:hover {
     text-align: center;
     vertical-align: middle;
 }
-.top-list .on .text-ellips {
-    margin: 10px 0 24px 95px;
-    height: 48px;
-    white-space: normal;
-    font-size: 16px;
-    line-height: 24px;
-}
+
 .top-detail .text-ellips {
     margin-left: 40px;
     width: 120px;
 }
-.top-list .on .book-author, .top-list .on .book-type {
-    margin-left: 95px;
-    color: #888;
-    font-size: 12px;
-    height: 20px;
-    line-height: 20px;
-}
-.top-list .top-detail .fr {
-    font-size: 12px;
-    color: #888;
-}
-.top-list .on .fr {
-    display: none;
-}
+
+
+
 .fr{
 	float: right;
+}
+.top-list{
+  margin-top: 11px;
+}
+.top-list li {
+  position: relative;
+  border-bottom: 1px solid #e1e5e9;
+  line-height: 39px;
+  box-sizing: border-box;
+}
+.top-list li .icon {
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 16px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.top-list li i:nth-of-type(1) {
+  background-position: -254px -79px;
+}
+.top-list li .bb {
+  overflow: hidden;
+  height: 114px;
+}
+.top-list li .bb img {
+  width: 85px;
+  height: 114px;
+  float: left;
+}
+.top-list li .bb .righ {
+  float: left;
+  color: #888;
+  margin-left: 15px;
+  text-align: left;
+  width:100px;
+  
+}
+.top-list li .bb .righ h4 {
+  font-size: 15px;
+  color: #4c4c4c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100px;
+}
+.top-list li .bb .righ .p1 {
+  margin-top: 12px;
+  height: 30px;
+}
+.top-list li .bb .righ .p2 {
+  height: 30px;
+}
+.top-list li .cc {
+  line-height: 39px;
+  height: 39px;
+}
+.top-list li .cc .ss {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60px;
+  display: inline-block;
+}
+.top-list .span {
+  float: right;
+  color: #888;
+  font-size: 12px;
+  cursor: pointer;
 }

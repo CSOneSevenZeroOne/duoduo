@@ -17,7 +17,9 @@ class Info extends Component {
             section : [],
             info : null,
             name : "小编强推",
-            arr : []
+            arr : [],
+            arr1:[],
+            index:0
         }
     }
 	slideup(i){
@@ -32,7 +34,11 @@ class Info extends Component {
             top : 172
         }, 300)
     }
-
+	xianshi(i){
+        this.setState({
+            index:i
+        })
+    }
     render(){
         return (
             <div id="info">
@@ -95,7 +101,7 @@ class Info extends Component {
                                         {((arr)=>{
                                             return arr.map((e,i,arr)=>{
                                                 if(i>=arr.length-6){
-                                                    return <li key={i} className="c2" data-cid="227839425131388">
+                                                    return <li key={i} className="c2">
                                                         <Link className="text-ellips" to={"/content?book_id="+this.state.book_id+"&section="+i} pbflag="章节区" pbtag="227839425131388" target="_blank">
                                                             <span>{e.title}</span></Link>
                                                         <i className="icon"></i></li>
@@ -110,8 +116,8 @@ class Info extends Component {
                                         {((arr)=>{
                                             return arr.map((e,i,arr)=>{
                                                 if(i<20){
-                                                    return <li  key={i} className="c2" data-cid="227839425131388">
-                                                        <Link className="text-ellips" to={"/content?book_id="+this.state.book_id+"&section="+i} pbflag="章节区" pbtag="227839425131388" target="_blank">
+                                                    return <li  key={i} className="c2">
+                                                        <Link className="text-ellips" to={"/content?book_id="+this.state.book_id+"&section="+i} target="_blank">
                                                             <span>{e.title}</span></Link>
                                                         <i className="icon"></i></li>
                                                 }
@@ -120,7 +126,7 @@ class Info extends Component {
                                     </ul>
                                 </div>
                                 <div className="chapter-more">
-                                    <Link to="/section" pbflag="章节区" pbtag="全部章节" target="_blank">查看全部章节</Link>
+                                    <Link to={"/section?book_id="+this.state.info.id} pbflag="章节区" pbtag="全部章节" target="_blank">查看全部章节</Link>
                                 </div>
                                 <div className="bdr-tit"><span className="text-title">猜你喜欢</span>
                                     <Link to="#" className="r fresh" pbflag="换一换" id="freshGuess">换一换</Link>
@@ -186,22 +192,57 @@ class Info extends Component {
                             <div className="bdr-tit"><span className="text-title">豪门总裁榜</span>
                                 <Link to="/58_0_0_0_heat/" pbtag="更多" target="_blank" className="r">更多&gt;</Link>
                             </div>
+                            
                             <ul className="top-list">
-                                <li className="on" pbflag="">
-                                    <Link pbtag="书名_871768095_豪门逃嫁101次" to ="/book/871768095/" target="_blank" className="top-detail">
-                                        <img src="//yue02.sogoucdn.com/cdn/image/book/871768095_1490614535541.jpeg"/><i className="icon text-num num1">1</i><span className="text-ellips fl">豪门逃嫁101次</span><span className="book-author fl hide">作者：唐小涵</span><span className="book-type fl hide">分类：豪门总裁</span><span className="fr">豪门总裁</span>
-                                    </Link>
-                                </li>
-                                <li pbflag="" className="on">
-                                    <Link pbtag="书名_6626331130_天价宠妻：总裁夫人休想逃" to ="/book/6626331130/" target="_blank" className="top-detail">
-                                        <img src="//yue07.sogoucdn.com/cdn/image/book/6626331130_1502875525554.jpg"/><i className="icon text-num num2">2</i><span className="text-ellips fl">天价宠妻：总裁夫人休想逃</span><span className="book-author fl hide">作者：白茶</span><span className="book-type fl hide">分类：豪门总裁</span><span className="fr">豪门总裁</span>
-                                    </Link>
-                                </li>
-                                <li pbflag="" className="on">
-                                    <Link pbtag="书名_3498581593_冥冥之中喜欢你" to ="/book/3498581593/" target="_blank" className="top-detail">
-                                        <img src="//yue06.sogoucdn.com/cdn/image/book/3498581593_1492619132764.jpg"/><i className="icon text-num num3">3</i><span className="text-ellips fl">冥冥之中喜欢你</span><span className="book-author fl hide">作者：姒城城</span><span className="book-type fl hide">分类：豪门总裁</span><span className="fr">豪门总裁</span>
-                                    </Link>
-                                </li>
+                                {((arr)=>{
+                                    return arr.map((e,i)=>{
+                                        return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="righ">
+                                                    <i className="icon">{i+1}</i>
+                                                    <h4>{e.title}</h4>
+                                                    <p className="p1">{e.author}</p>
+                                                    <p className="p2">{e.class}</p>
+                                                </div>
+                                            </div>
+                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                                <i className="icon">{i+1}</i>
+                                                <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
+                                                <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
+                                            </div>
+                                        </li>
+                                    })
+                                })(this.state.arr1)}
+                            </ul>
+                        </div>
+                        
+                        <div id="catBooks">
+                            <div className="bdr-tit"><span className="text-title">热门榜</span>
+                                <Link to="/58_0_0_0_heat/" pbtag="更多" target="_blank" className="r">更多&gt;</Link>
+                            </div>
+                            
+                            <ul className="top-list">
+                                {((arr)=>{
+                                    return arr.map((e,i)=>{
+                                        return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
+                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                                <img src={e.img} alt=""/>
+                                                <div className="righ">
+                                                    <i className="icon">{i+1}</i>
+                                                    <h4>{e.title}</h4>
+                                                    <p className="p1">{e.author}</p>
+                                                    <p className="p2">{e.class}</p>
+                                                </div>
+                                            </div>
+                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                                <i className="icon">{i+1}</i>
+                                                <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
+                                                <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
+                                            </div>
+                                        </li>
+                                    })
+                                })(this.state.arr1)}
                             </ul>
                         </div>
                     </div>
@@ -231,7 +272,7 @@ class Info extends Component {
                     book_id : id
                 }
             }).then(function(res){
-                console.log(res);
+               
                 self.setState({
                     section : res,
                     status : true
@@ -242,16 +283,27 @@ class Info extends Component {
                 info : res[0]
             });
         })
-
+		
         $.ajax({
             type : 'POST',
             url : 'http://localhost:55555/home',
-            datLink : {
+            data : {
                 sort : self.state.name
             }
         }).then(function(res){
+        	console.log(res)
             self.setState({
                 arr : res
+            })
+        })
+        
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55555/home/bangdan',
+        }).then(function (res) {
+        	console.log(res)
+            self.setState({
+                arr1:res
             })
         })
     }

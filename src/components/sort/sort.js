@@ -368,7 +368,7 @@ class Sort extends Component {
                                                             }} className="msg">{e.msg}</p>
                                                             <p>
                                                                 <Link to={"/info?book_id="+e.id} className='read'>立即阅读</Link>
-                                                                <Link to={"/menu?book_id="+e.id} className='menu' >查看目录</Link>
+                                                                <Link to={"/section?book_id="+e.id} className='menu' >查看目录</Link>
                                                             </p>
                                                         </div>
                                                     </li>

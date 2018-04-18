@@ -34,7 +34,7 @@ class Home extends Component {
                    <Woman/>
                    <Wanben/>
                    <Fenlei/>
-                   <Update/>
+                   {/*<Update/>*/}
                    <Guding/>
                </div>
            </div>
