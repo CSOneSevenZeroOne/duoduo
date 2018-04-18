@@ -60,13 +60,14 @@
   float: right;
   margin-top: 10px;
 }
-#header #main .top .right a {
+#header #main .top .right span {
   font-size: 14px;
   color: #4c4c4c;
   border-right: 1px solid #4c4c4c;
   padding: 0 11px;
+  cursor: pointer;
 }
-#header #main .top .right a:nth-last-of-type(1) {
+#header #main .top .right span:nth-last-of-type(1) {
   border-right: 0;
 }
 #header #main .top .r {

@@ -16,7 +16,7 @@ class Brother extends Component {
             src: require("../../images/logo_03.png"),
             name: "汪美杰的专属小书屋",
             name1: "斗罗大陆",
-            arr: ["首页", "男生", "女生", "包月", "完本", "免费", "排行榜"],
+            arr: ["首页", "男生", "女生", "完本", "免费", "排行榜"],
             bool:false,
             user:""
         }
@@ -63,11 +63,11 @@ class Brother extends Component {
                                 <button onClick={this.change.bind(this)}></button>
                             </form>
                             <div className="tag">
-                                <a href="javascript:void(0)">凤求凰</a>
-                                <a href="javascript:void(0)">国民老公带回家</a>
-                                <a href="javascript:void(0)">龙王传说</a>
-                                <a href="javascript:void(0)">总裁娇妻太难宠</a>
-                                <a href="javascript:void(0)">绝品小农民</a>
+                                <Link to="/index">凤求凰</Link>
+                                <Link to="/index">国民老公带回家</Link>
+                                <Link to="/index">龙王传说</Link>
+                                <Link to="/index">总裁娇妻太难宠</Link>
+                                <Link to="/index">绝品小农民</Link>
                             </div>
                         </div>
                         <div className="right" style={(()=>{
@@ -77,8 +77,8 @@ class Brother extends Component {
                                 return {display:'none'}
                             }
                         })()}>
-                            <a href="javascript:void(0)" onClick={this.props.show.bind(this)}>登录</a>
-                            <Link to="/index/register">注册</Link>
+                            <span onClick={this.props.show.bind(this)}>登录</span>
+                            <span><Link to="/index/register">注册</Link></span>
                         </div>
                         <div className="r" style={(()=>{
                             if (this.state.bool) {
@@ -104,27 +104,18 @@ class Brother extends Component {
                                     switch (e){
                                         case "首页":
                                             return <Link to="/index" key={i}>{e}</Link>
-                                        break;
                                         case "男生":
                                             return <Link to="/index/nansheng" key={i} onClick={this.props.sort.bind(this,"男生分类")}>{e}</Link>
-                                            break;
                                         case "女生":
                                             return <Link to="/index/nvsheng" key={i} onClick={this.props.sort.bind(this,"女生分类")}>{e}</Link>
-                                            break;
-                                        case "包月":
-                                            return <Link to="/index/sort" key={i} >{e}</Link>
-                                            break;
                                         case "完本":
                                             return <Link to="/index/wanben" key={i} onClick={this.props.wanben.bind(this,"完本")}>{e}</Link>
-                                            break;
                                         case "免费":
                                             return <Link to="/index/mianfei" key={i} onClick={this.props.mianfei.bind(this,"免费")}>{e}</Link>
-                                            break;
                                         case "排行榜":
                                             return <Link to="/index/paihang" key={i}>{e}</Link>
-                                            break;
                                         default:
-                                            break;
+                                            return "";
                                     }
                                 })
                             })(this.state.arr)}

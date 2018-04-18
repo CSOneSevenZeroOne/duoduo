@@ -48,7 +48,9 @@ class Section extends Component {
                            						<Link className="text-ellips" to={"/content?book_id="+window.location.href.split("?")[1].split("=")[1]+"&section="+i} pbflag="章节区" pbtag="227839425131388" target="_blank">
                                                             <span>{e.title}</span></Link>
                            						</li>
-                           					}
+                           					}else {
+                           					    return "";
+                                            }
                            				})
                            			})(i)}
                            		</ul>);
@@ -64,8 +66,7 @@ class Section extends Component {
 
 	componentDidMount() {
 		var self = this;
-		var id = parseInt(window.location.href.split("?")[1].split("=")[1]);
-		console.log(id);
+		var id = window.location.href.split("?")[1].split("=")[1];
 		$.ajax({
 			url: 'http://localhost:55555/home/section',
 			type: "get",
@@ -74,7 +75,6 @@ class Section extends Component {
 				book_id: id
 			}
 		}).then(function(res) {
-			console.log(res)
 			self.setState({
 				section: res,
 				num: Math.ceil(res.length / 100),

@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import $ from "jquery"
-import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Home extends Component {
     constructor(props){
@@ -27,7 +27,6 @@ class Home extends Component {
         this.setState({
             name1 : e.target.value
         })
-        var self = this;
         $.ajax({
             type : "post",
             url : "http://localhost:55555/home/cx",
@@ -85,37 +84,31 @@ class Home extends Component {
             <div>
                 <div className="header">
                     <div className="main1">
-                        <a href="#"><img src={this.state.src}/>
+                        <Link to="/index"><img src={this.state.src} alt=""/>
                             <p>{this.state.name}</p>
-                        </a>
+                        </Link>
                         <div className="nav">
                             {((arr) =>{
                                 return arr.map((e, i) =>{
                                     switch(e){
                                         case "热门分类":
                                             return <Link to="/index/nansheng" key={i}>{e}</Link>
-                                            break;
                                         case "首页":
                                             return <Link to="/index" key={i}>{e}</Link>
-                                            break;
                                         case "男生":
                                             return <Link to="/index/nansheng" key={i} onClick={this.props.sort.bind(this, e)}>{e}</Link>
-                                            break;
                                         case "女生":
                                             return <Link to="/index/nvsheng" key={i} onClick={this.props.sort.bind(this, e)}>{e}</Link>
-                                            break;
                                         case "包月":
                                             return <Link to="/sort" key={i} onClick={this.props.sort.bind(this, e)}>{e}</Link>
-                                            break;
                                         case "完本":
                                             return <Link to="/index/wanben" key={i} onClick={this.props.wanben.bind(this, e)}>{e}</Link>
-                                            break;
                                         case "免费":
                                             return <Link to="/index/mianfei" key={i} onClick={this.props.mianfei.bind(this, e)}>{e}</Link>
-                                            break;
                                         case "排行榜":
-                                            return <Link to="/sort" key={i}>{e}</Link>
-                                            break;
+                                            return <Link to="/index/paihang" key={i}>{e}</Link>
+                                        default:
+                                            return "";
                                     }
                                 })
                             })(this.state.arr)}
@@ -125,7 +118,7 @@ class Home extends Component {
                             <button onClick={this.change.bind(this)}></button>
                         </form>
                         <div className="login">
-                            <a href="javascript:void(0)" onClick={this.props.show.bind(this)}>登录</a>
+                            <span onClick={this.props.show.bind(this)}>登录</span>
                             <Link to="/register">注册</Link>
                         </div>
                     </div>
@@ -182,7 +175,7 @@ class Home extends Component {
                             <ul>
                                 <Link to={(()=>{
                                     var str=window.location.href.split("#")[1];
-                                    var str1=str.split("&")[0]+"&section="+(parseInt(str.split("&")[1].split("=")[1])-1)
+                                    var str1=str.split("&")[0]+"&section="+(str.split("&")[1].split("=")[1]-1)
                                     return str1
                                 })()} onClick={this.tab.bind(this)}>上一章</Link>
                                 <Link to={(()=>{
@@ -192,7 +185,7 @@ class Home extends Component {
                                 })()}>目录</Link>
                                 <Link to={(()=>{
                                     var str=window.location.href.split("#")[1];
-                                    var str1=str.split("&")[0]+"&section="+(parseInt(str.split("&")[1].split("=")[1])+1)
+                                    var str1=str.split("&")[0]+"&section="+(Number(str.split("&")[1].split("=")[1])+1)
                                     return str1
                                 })()} onClick={this.tab.bind(this)}>下一章</Link>
                             </ul>

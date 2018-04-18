@@ -58,7 +58,6 @@ class Update extends Component {
             type: 'GET',
             url: 'http://localhost:55555/home/gengxin',
         }).then(function (res) {
-            console.log(res);
             self.setState({
                 arr1:res
             })
@@ -67,7 +66,6 @@ class Update extends Component {
 }
 
 export default connect((state) => {
-    console.log(state)
     return {
         state
     }

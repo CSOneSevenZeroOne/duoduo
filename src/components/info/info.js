@@ -19,7 +19,8 @@ class Info extends Component {
             name : "小编强推",
             arr : [],
             arr1:[],
-            index:0
+            index:0,
+            index2:0
         }
     }
 	slideup(i){
@@ -37,6 +38,11 @@ class Info extends Component {
 	xianshi(i){
         this.setState({
             index:i
+        })
+    }
+    xianshi2(i){
+        this.setState({
+            index2:i
         })
     }
     render(){
@@ -105,6 +111,8 @@ class Info extends Component {
                                                         <Link className="text-ellips" to={"/content?book_id="+this.state.book_id+"&section="+i} pbflag="章节区" pbtag="227839425131388" target="_blank">
                                                             <span>{e.title}</span></Link>
                                                         <i className="icon"></i></li>
+                                                }else {
+                                                    return "";
                                                 }
                                             })
                                         })(this.state.section)}
@@ -120,6 +128,8 @@ class Info extends Component {
                                                         <Link className="text-ellips" to={"/content?book_id="+this.state.book_id+"&section="+i} target="_blank">
                                                             <span>{e.title}</span></Link>
                                                         <i className="icon"></i></li>
+                                                }else {
+                                                    return "";
                                                 }
                                             })
                                         })(this.state.section)}
@@ -151,6 +161,8 @@ class Info extends Component {
 
                                                         <h4>{e.title}</h4>
                                                     </li>
+                                                }else {
+                                                    return "";
                                                 }
                                             })
                                         })(this.state.arr)}
@@ -197,7 +209,8 @@ class Info extends Component {
                                 {((arr)=>{
                                     return arr.map((e,i)=>{
                                         return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
-                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                            <Link to={"/index/info?book_id="+e.id}>
+                                            <div className="bb" style={{display:this.state.index===i?"block":"none"}}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="righ">
                                                     <i className="icon">{i+1}</i>
@@ -206,11 +219,12 @@ class Info extends Component {
                                                     <p className="p2">{e.class}</p>
                                                 </div>
                                             </div>
-                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                            <div className="cc" style={{display:this.state.index===i?"none":"block"}}>
                                                 <i className="icon">{i+1}</i>
                                                 <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                                 <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
                                             </div>
+                                            </Link>
                                         </li>
                                     })
                                 })(this.state.arr1)}
@@ -225,8 +239,8 @@ class Info extends Component {
                             <ul className="top-list">
                                 {((arr)=>{
                                     return arr.map((e,i)=>{
-                                        return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
-                                            <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                        return <li className="list" key={i} onMouseEnter={this.xianshi2.bind(this,i)}>
+                                            <div className="bb" style={{display:this.state.index2===i?"block":"none"}}>
                                                 <img src={e.img} alt=""/>
                                                 <div className="righ">
                                                     <i className="icon">{i+1}</i>
@@ -235,7 +249,7 @@ class Info extends Component {
                                                     <p className="p2">{e.class}</p>
                                                 </div>
                                             </div>
-                                            <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                            <div className="cc" style={{display:this.state.index2===i?"none":"block"}}>
                                                 <i className="icon">{i+1}</i>
                                                 <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                                 <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
@@ -254,8 +268,7 @@ class Info extends Component {
 
     componentDidMount(){
         var self = this;
-        var id=parseInt(window.location.href.split("?")[1].split("=")[1]);
-        console.log(id);
+        var id=window.location.href.split("?")[1].split("=")[1];
         $.ajax({
             url : 'http://localhost:55555/home/info',
             type : "get",
@@ -291,7 +304,6 @@ class Info extends Component {
                 sort : self.state.name
             }
         }).then(function(res){
-        	console.log(res)
             self.setState({
                 arr : res
             })
@@ -301,7 +313,6 @@ class Info extends Component {
             type: 'GET',
             url: 'http://localhost:55555/home/bangdan',
         }).then(function (res) {
-        	console.log(res)
             self.setState({
                 arr1:res
             })

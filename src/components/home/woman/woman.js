@@ -54,8 +54,10 @@ class Tuijian extends Component {
                                     {((arr)=>{
                                         return arr.map((e,i)=>{
                                             return <li key={i}>
-                                                <Link to="#" className="leibie">[{e.class.split("：")[1]}]</Link>
-                                                <Link to="#" className="title">{e.title}</Link>
+                                                <Link to={"/index/info?book_id="+e.id}>
+                                                <span className="leibie">[{e.class.split("：")[1]}]</span>
+                                                <span className="title">{e.title}</span>
+                                                </Link>
                                             </li>
                                         })
                                     })(this.state.arr)}
@@ -72,7 +74,8 @@ class Tuijian extends Component {
                             {((arr)=>{
                                 return arr.map((e,i)=>{
                                     return <li className="list" key={i} onMouseEnter={this.xianshi.bind(this,i)}>
-                                        <div className="bb" style={{display:this.state.index==i?"block":"none"}}>
+                                        <Link to={"/index/info?book_id="+e.id}>
+                                        <div className="bb" style={{display:this.state.index===i?"block":"none"}}>
                                             <img src={e.img} alt=""/>
                                             <div className="righ">
                                                 <i className="icon" style={{"backgroundImage":'url('+this.state.src1+')'}}>{i+1}</i>
@@ -81,11 +84,12 @@ class Tuijian extends Component {
                                                 <p className="p2">{e.class}</p>
                                             </div>
                                         </div>
-                                        <div className="cc" style={{display:this.state.index==i?"none":"block"}}>
+                                        <div className="cc" style={{display:this.state.index===i?"none":"block"}}>
                                             <i className="icon" style={{"backgroundImage":'url('+this.state.src1+')'}}>{i+1}</i>
                                             <span className="ss" style={{display:"inline-block",marginLeft:"40px",}}>{e.title}</span>
                                             <span style={{float:"right"}}>{e.class.split("：")[1]}</span>
                                         </div>
+                                        </Link>
                                     </li>
                                 })
                             })(this.state.arr1)}
