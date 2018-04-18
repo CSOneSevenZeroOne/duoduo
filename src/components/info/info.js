@@ -308,7 +308,6 @@ class Info extends Component {
                 arr : res
             })
         })
-        
         $.ajax({
             type: 'GET',
             url: 'http://localhost:55555/home/bangdan',

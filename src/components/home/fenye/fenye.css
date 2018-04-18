@@ -40,12 +40,14 @@
   width: 748px;
   height: 250px;
   overflow: hidden;
-  padding: 10px 0 0 10px;
+  margin: 10px 0 0 10px;
+  position: relative;
 }
 .fenlei .fenlei-m .lunbo {
   width: 200%;
   height: 250px;
   overflow: hidden;
+  position: relative;
 }
 .fenlei .fenlei-m .lunbo li {
   float: left;
@@ -54,6 +56,48 @@
 }
 .fenlei .fenlei-m .lunbo li img {
   width: 100%;
+}
+.fenlei .fenlei-m .lun {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.fenlei .fenlei-m .lun li {
+  width: 26px;
+  height: 6px;
+  margin: 0 10px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.fenlei .fenlei-m .lun .active {
+  border: 0;
+  background-color: #f60;
+}
+.fenlei .fenlei-m .next,
+.fenlei .fenlei-m .pre {
+  display: block;
+  position: absolute;
+  height: 56px;
+  width: 41px;
+  top: 50%;
+  margin-top: -28px;
+  background: url(../../../images/icon.png) no-repeat;
+}
+.fenlei .fenlei-m .next {
+  right: 0;
+  background-position: -168px -79px;
+}
+.fenlei .fenlei-m .next:hover {
+  background-position: -69px -79px;
+}
+.fenlei .fenlei-m .pre {
+  left: 0;
+  background-position: -121px -79px;
+}
+.fenlei .fenlei-m .pre:hover {
+  background-position: -16px -79px;
 }
 .fenlei .fenlei-r {
   width: 190px;

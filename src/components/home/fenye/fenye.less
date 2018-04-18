@@ -40,11 +40,13 @@
     width: 748px;
     height: 250px;
     overflow: hidden;
-    padding: 10px 0 0 10px;
+    margin: 10px 0 0 10px;
+    position:relative;
     .lunbo {
       width: 200%;
       height: 250px;
       overflow: hidden;
+      position:relative;
       li {
         float: left;
         width: 748px;
@@ -53,6 +55,47 @@
           width: 100%;
         }
       }
+    }
+    .lun{
+      position:absolute;
+      bottom:10px;
+      width:100%;
+      text-align:center;
+      li{
+        width: 26px;
+        height: 6px;
+        margin: 0 10px;
+        display:inline-block;
+        background-color:#fff;
+        border:1px solid #ccc;
+      }
+      .active{
+        border:0;
+        background-color:#f60;
+      }
+    }
+    .next,.pre{
+      display:block;
+      position: absolute;
+      height: 56px;
+      width: 41px;
+      top: 50%;
+      margin-top: -28px;
+      background:url(../../../images/icon.png) no-repeat;
+    }
+    .next{
+      right: 0;
+      background-position: -168px -79px;
+    }
+    .next:hover{
+      background-position: -69px -79px;
+    }
+    .pre{
+      left: 0;
+      background-position: -121px -79px;
+    }
+    .pre:hover{
+      background-position: -16px -79px;
     }
   }
   .fenlei-r {
