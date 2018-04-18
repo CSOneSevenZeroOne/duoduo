@@ -131,7 +131,7 @@ class Update extends Component {
                 }
             }).done((res) => {
                 alert("注册成功")
-                window.location.href = "#/";
+                window.location.href = "#/index";
                 sessionStorage.setItem('user', self.state.name);
             })
         }

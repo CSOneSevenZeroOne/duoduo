@@ -41,7 +41,7 @@ class Update extends Component {
             if (res.length === 1) {
                 alert("登录成功")
                 sessionStorage.setItem('user', res[0].u_name);
-                window.location.href="#/";
+                window.location.href="#/index";
                 self.props.hide()
             }
         })
