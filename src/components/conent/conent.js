@@ -94,10 +94,10 @@ class Home extends Component {
     					<p>当前位置:<a href="#">首页</a>><a href="#">豪门总裁</a>><a href="#">Boss凶猛</a></p>
     					<div class="biti">
 	    					<ul class="item">
-		    					<li></li>
-		    					<li></li>
-		    					<li></li>
-		    					<li></li>
+		    					<a href="#"><i class="it icon"></i>目录</a>
+		    					<a href="#"><i class="is icon"></i>设置</a>
+		    					<a href="#"><i class="ij icon"></i>书架</a>
+		    					<a href="#"><i class="iy icon"></i>书页</a>
 	    					</ul>
     					</div>
     				</div>
@@ -105,12 +105,18 @@ class Home extends Component {
     					<div class="essay"></div>
     				</div>
     				<div class="main2">
-    					<div class="items"></div>
+    					<div class="items">
+    						<ul>
+    							<a href="#">上一章</a>
+    							<a href="#">目录</a>
+    							<a href="#">下一章</a>
+    						</ul>
+    					</div>
     				</div>
     				<ul class="all">
-	    				<li></li>
-	    				<li></li>
-	    				<li></li>
+	    				<a href="#"><i class="iz icon"></i></a>
+	    				<a href="#"><i class="iu icon"></i></a>
+	    				<a href="#"><i class="id icon"></i></a>
     				</ul>
     				
     			</div>

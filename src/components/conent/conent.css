@@ -106,6 +106,16 @@
 	margin-top: 15px;
 	box-shadow: 0 1px 5px #666666;
 }
+.content .items ul a{
+	display: block;
+	width: 273px;
+	height: 60px;
+	float: left;
+	text-align: center;
+	color: #666666;
+	font-size: 18px;
+	line-height: 60px;
+}
 .content .all{
 	width: 60px;
 	height: 190px;
@@ -113,11 +123,14 @@
 	bottom: 24px;
 	right: 200px;
 }
-.content .all li{
+.content .all a{
+	display: block;
 	width: 60px;
 	height: 60px;
 	background: #F9F7F5;
 	margin-bottom: 4px;
+	overflow: hidden;
+	color: #666666;
 	box-shadow: 0 1px 3px #bebbb8;
 }
 .content .item{
@@ -127,10 +140,49 @@
 	left: -64px;
 	top: 0;
 }
-.content .item li{
+.content .item a{
+	display: block;
 	width: 60px;
 	height: 60px;
 	background: #F9F7F5;
 	margin-bottom: 4px;
 	box-shadow: 0 1px 3px #bebbb8;
+	overflow: hidden;
+	text-align: center;
+	color: #666666;
+}
+.content .item a:hover,.content .all a:hover{
+	background: white;
+}
+.icon{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	margin-top: 10px;
+	background-image: url(../../images/icon.png);
+}
+.content .all .icon{
+	margin-top: 20px;
+}
+.content .item .it{
+	background-position: -220px -242px;
+}
+.content .item .is{
+	background-position: -262px -240px;
+}
+.content .item .ij{
+	background-position: -222px -270px;
+}
+.content .item .iy{
+	background-position: -260px -270px;
+}
+.content .all .iz{
+	background-position: -62px -350px;
+}
+.content .all .iu{
+	background-position: -124px -350px;
+}
+.content .all .id{
+	background-position: -178px -354px;
 }

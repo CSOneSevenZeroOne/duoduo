@@ -82,19 +82,19 @@ class Brother extends Component {
                                             return <Link to="/" key={i}>{e}</Link>
                                         break;
                                         case "男生":
-                                            return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
+                                            return <Link to="/nansheng" key={i} onClick={this.props.sort.bind(this,"男生分类")}>{e}</Link>
                                             break;
                                         case "女生":
-                                            return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
+                                            return <Link to="/nvsheng" key={i} onClick={this.props.sort.bind(this,"女生分类")}>{e}</Link>
                                             break;
                                         case "包月":
-                                            return <Link to="/sort" key={i} onClick={this.props.sort.bind(this,e)}>{e}</Link>
+                                            return <Link to="/sort" key={i} >{e}</Link>
                                             break;
                                         case "完本":
-                                            return <Link to="/sort" key={i} onClick={this.props.wanben.bind(this,e)}>{e}</Link>
+                                            return <Link to="/wanben" key={i} onClick={this.props.wanben.bind(this,e)}>{e}</Link>
                                             break;
                                         case "免费":
-                                            return <Link to="/sort" key={i} onClick={this.props.mianfei.bind(this,e)}>{e}</Link>
+                                            return <Link to="/mianfei" key={i} onClick={this.props.mianfei.bind(this,e)}>{e}</Link>
                                             break;
                                         case "排行榜":
                                             return <Link to="/sort" key={i}>{e}</Link>

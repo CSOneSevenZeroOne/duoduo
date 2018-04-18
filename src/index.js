@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Header from './components/header/header'
 import Home from './components/home/home';
 import Sort from './components/sort/sort';
+import Info from './components/info/info';
 import Footer from './components/footer/footer';
 import {HashRouter, Route} from "react-router-dom";
 import Register from './components/register/register'
@@ -16,15 +17,19 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 //仓库
 let store = createStore((state = {
-    sort:""
+    sort:"",
+    book_id:0,
+    section:0,
+    status:"",
+    price:""
 }, action) =>{
     switch(action.type){
         case 'SORTS':
-            return Object.assign({}, state, {sort : action.sort});
+            return Object.assign({}, state, {sort : action.sort,status : "",price : ""});
         case 'WANBEN':
-            return Object.assign({}, state, {sort : action.waneben});
+            return Object.assign({}, state, {sort : "",status : action.wanben,price : ""});
         case 'MIANFEI':
-            return Object.assign({}, state, {sort : action.mianfei});
+            return Object.assign({}, state, {sort : "",status : "",price : action.mianfei});
         case 'BOOl':
             return Object.assign({}, state, {bool : action.bool});
         case 'BOOll':
@@ -40,7 +45,11 @@ ReactDOM.render(
 			<div>
 				<Header/>
                 <Route exact path="/" component={Home} />
-                <Route path='/sort' component={Sort}/>
+                <Route path='/nansheng' component={Sort}/>
+                <Route path='/nvsheng' component={Sort}/>
+                <Route path='/wanben' component={Sort}/>
+                <Route path='/mianfei' component={Sort}/>
+                <Route path='/info' component={Info}/>
                 <Route exact path="/register" component={Register} />
                 <Route path='/conent' component={Conent}/>
 				<Footer/>
