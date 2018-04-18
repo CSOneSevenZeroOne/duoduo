@@ -40,6 +40,7 @@ ReactDOM.render(
 	<HashRouter>
 		<Provider store={store}>
 			<div>
+                <Route exact path="/" component={Home} />
                 <Route path="/index" component={Home} />
                 <Route path="/content" component={Content} />
 			</div>

@@ -52,7 +52,7 @@ class Brother extends Component {
                 <div id="main">
                     <div className="top">
                         <div className="left">
-                            <Link to="/index">
+                            <Link to="/">
                             <img src={this.state.src} alt=""/>
                             <span>{this.state.name}</span>
                             </Link>
@@ -103,7 +103,7 @@ class Brother extends Component {
                                 return arr.map((e, i) => {
                                     switch (e){
                                         case "首页":
-                                            return <Link to="/index" key={i}>{e}</Link>
+                                            return <Link to="/" key={i}>{e}</Link>
                                         case "男生":
                                             return <Link to="/index/nansheng" key={i} onClick={this.props.sort.bind(this,"男生分类")}>{e}</Link>
                                         case "女生":

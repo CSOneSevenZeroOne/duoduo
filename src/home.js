@@ -26,7 +26,7 @@ class Index extends Component {
         return(
             <div id="all">
                 <Header/>
-                <Route exact path="/index/" component={Home} />
+                <Route exact path="/" component={Home} />
                 <Route path='/index/nansheng' component={Sort}/>
                 <Route path='/index/nvsheng' component={Sort}/>
                 <Route path='/index/wanben' component={Sort}/>
